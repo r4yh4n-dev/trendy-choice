@@ -11,17 +11,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "9711d215-1283-4685-9d07-49f6509baf94",
+          "id": "5e701816-4967-4c8a-ac22-32e8c2314007",
           "color": null,
-          "size": "XL",
+          "size": "L",
           "stockQuantity": 948,
           "inStock": true
         },
         {
-          "id": "5e701816-4967-4c8a-ac22-32e8c2314007",
+          "id": "9711d215-1283-4685-9d07-49f6509baf94",
           "color": null,
-          "size": "L",
-          "stockQuantity": 949,
+          "size": "XL",
+          "stockQuantity": 948,
           "inStock": true
         }
       ]
@@ -196,7 +196,7 @@
           "id": "e3d69dd6-1c92-46c9-a31c-16ce46b54209",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 252,
+          "stockQuantity": 250,
           "inStock": true
         }
       ]
@@ -726,7 +726,7 @@
           "id": "ef42a40c-d307-4036-8e26-c880b9c3fe1c",
           "color": "Silver",
           "size": null,
-          "stockQuantity": 85,
+          "stockQuantity": 84,
           "inStock": true
         }
       ]
