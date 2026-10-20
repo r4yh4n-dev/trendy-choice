@@ -718,7 +718,7 @@ body.sheet-open .toast{animation-name:toastInDown}
       <span class="brand-name" style="font-size:16px">Trendy Choice</span>
     </div>
     <div class="foot-links">
-      <a id="footPhone" href="tel:+8801826459122">
+      <a id="footPhone" href="tel:+8801700000000">
         <svg class="ic"><use href="#i-phone"/></svg><span id="footPhoneTxt">+880 1700-000000</span>
       </a>
       <a id="footWa" target="_blank" rel="noopener">
@@ -815,7 +815,7 @@ body.sheet-open .toast{animation-name:toastInDown}
           <div class="field">
             <label for="fPhone">মোবাইল নাম্বার <span class="req">*</span></label>
             <input type="tel" id="fPhone" name="phone" placeholder="01XXXXXXXXX" inputmode="numeric" maxlength="11" autocomplete="tel" required>
-            <span class="err" id="ePhone">সঠিক ১১ ডিজিটের নাম্বার দিন (যেমন: 0171234567)</span>
+            <span class="err" id="ePhone">সঠিক ১১ ডিজিটের নাম্বার দিন (যেমন: 01712345678)</span>
           </div>
           <div class="field">
             <label for="fAddress">সম্পূর্ণ ঠিকানা <span class="req">*</span></label>
@@ -883,11 +883,14 @@ body.sheet-open .toast{animation-name:toastInDown}
 const CONFIG = {
   API_URL: 'https://trendy-choice-api.r4yh4nxyz.workers.dev',
 
+  // একই সাইটের স্ট্যাটিক পণ্য-ফাইল — প্রথমে এটাই লোড হয়, ব্যর্থ হলে API_URL
+  LOCAL_PRODUCTS: './products.json',
+
   // ব্যাকআপ API ঠিকানা — Workers ঠিকানা কোনো নেটওয়ার্কে ব্লক হলে পরের ঠিকানাগুলো চেষ্টা হবে
   API_FALLBACKS: [],
 
   // WhatsApp নম্বর — দেশের কোডসহ, + বা স্পেস ছাড়া (placeholder)
-  WHATSAPP: '8801826459122',
+  WHATSAPP: '8801700000000',
 
   // Messenger পেজ ইউজারনেম — https://m.me/<username> (placeholder)
   MESSENGER: 'trendychoicepage',
@@ -1127,11 +1130,21 @@ async function loadProducts() {
 
   let data = null;
   let lastErr = null;
+
+  // ১) আগে একই সাইটের products.json — ক্যাশ-বাস্টিং কোয়েরি দিয়ে
+  try {
+    data = await fetchJSON(CONFIG.LOCAL_PRODUCTS + '?v=' + Date.now(), CONFIG.GET_TIMEOUT, { cache: 'no-store' });
+    if (!data || !Array.isArray(data.products) || !data.products.length) data = null;
+  } catch (err) {
+    data = null;
+    lastErr = err;
+  }
+
   const bases = [CONFIG.API_URL].concat(CONFIG.API_FALLBACKS || []);
 
   // প্রতিটি ঠিকানা কয়েক রাউন্ড চেষ্টা — Workers ঠিকানা ব্লক থাকলেও যেন শেষ পর্যন্ত ঝুলে না থাকে
   outer:
-  for (let round = 0; round < Math.max(1, CONFIG.LOAD_ROUNDS); round++) {
+  for (let round = 0; !data && round < Math.max(1, CONFIG.LOAD_ROUNDS); round++) {
     for (const base of bases) {
       try {
         data = await fetchJSON(base + '/products', CONFIG.GET_TIMEOUT);
