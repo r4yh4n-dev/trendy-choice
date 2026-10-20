@@ -1,0 +1,41 @@
+name: Update products
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:          # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-products
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch products from Business Koro
+        run: node scripts/fetch-products.js
+        env:
+          BK_API_KEY: ${{ secrets.BK_API_KEY }}
+          BK_DOMAIN: ${{ secrets.BK_DOMAIN }}
+
+      - name: Commit products.json if it changed
+        run: |
+          if [ -n "$(git status --porcelain products.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add products.json
+            git commit -m "Update products"
+            git push
+          else
+            echo "No changes"
+          fi
