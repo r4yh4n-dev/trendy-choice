@@ -183,46 +183,6 @@
       "variants": []
     },
     {
-      "id": "6a765b75-17bf-4536-ba64-5c111d376fa1",
-      "name": "K8 Wireless Earbuds",
-      "description": "High-Fidelity Stereo Bass\nUltra-Long Battery Life\nDigital Power Display Case\nHD Integrated Microphone\nSmart Touch Controls\nErgonomic Sport Design\nTrue Wireless (TWS) Connectivity",
-      "images": [
-        "https://cdn.businesskoro.com/products/24902504-bf97-4f16-940d-c03eed693f5c.png"
-      ],
-      "price": 400,
-      "inStock": true,
-      "variants": [
-        {
-          "id": "fe749ae6-1d29-4a50-a8bc-a7a421d3808f",
-          "color": "Black",
-          "size": null,
-          "stockQuantity": 790,
-          "inStock": true
-        },
-        {
-          "id": "ddde06b9-c9f8-4c45-a968-5c8019153e0a",
-          "color": "White",
-          "size": null,
-          "stockQuantity": 421,
-          "inStock": true
-        },
-        {
-          "id": "18046807-dac5-4185-9162-7bd4bd15d780",
-          "color": "Yellow",
-          "size": null,
-          "stockQuantity": 460,
-          "inStock": true
-        },
-        {
-          "id": "f33ab669-5753-401b-9420-43bed55ed33d",
-          "color": "Red",
-          "size": null,
-          "stockQuantity": 183,
-          "inStock": true
-        }
-      ]
-    },
-    {
       "id": "4384f9fc-d380-4928-8272-03016151fc06",
       "name": "Ven-Dens 50000mAh VD-PB063 22.5W Fast Charging Power Bank with Digital Display & Built-in Cables",
       "description": "Brand: Ven-Dens\nModel: VD-PB063\nCase Material: PC + ABS\nCycle-index of charging and discharging: 300 times\nBatteries Type: Pouch Polymer Batteries\nBattery Model: 1260110/10000mAh*5\nBattery Capacity: 50000mah\nDimension: 148.2*69.5*67mm\nDisplay Type: Digital Display\nInput: Type-c port: 5V/3A,9V/2A,12V/1.5A\nOutput:Type-c port: 5V/3A,9V/2.22A,12V/1.67A\nLightning cable:5V/2A\nType-c cable:5V/3A 9V/2.22A 12V/1.67A\n10V/2.25A\nUSB port: 5V/3A,9V/2A,12V/1.5A,10V/2.25A\nTotal Output:5V-3A\nSolution: S620\nColor: Black",
