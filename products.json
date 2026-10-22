@@ -75,7 +75,7 @@
           "id": "3f3ddbc2-7ee9-4235-9a6f-92f082e83bf4",
           "color": "Cofee",
           "size": "XL",
-          "stockQuantity": 348,
+          "stockQuantity": 347,
           "inStock": true
         },
         {
@@ -193,21 +193,14 @@
       "inStock": true,
       "variants": [
         {
-          "id": "63d351bf-4e93-4075-b4c7-c6894e6d1da1",
+          "id": "4ceb8360-37a1-494f-bd41-64c3e9389c0b",
           "color": "Red",
           "size": null,
-          "stockQuantity": 8,
+          "stockQuantity": 3,
           "inStock": true
         },
         {
-          "id": "a5b7e2a2-8e84-426f-b8cd-a718dfc15391",
-          "color": "White",
-          "size": null,
-          "stockQuantity": 14,
-          "inStock": true
-        },
-        {
-          "id": "44570c0e-a7fa-41a4-981f-6e2d896f51e3",
+          "id": "d86a26b3-b0e5-4f22-9764-15aa2ee208af",
           "color": "Black",
           "size": null,
           "stockQuantity": 10,
@@ -770,7 +763,7 @@
           "id": "a1327eb1-9b56-4535-b953-351a6cddce43",
           "color": "Black",
           "size": null,
-          "stockQuantity": 10,
+          "stockQuantity": 6,
           "inStock": true
         }
       ]
