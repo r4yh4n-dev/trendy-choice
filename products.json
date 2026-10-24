@@ -11,17 +11,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "5e701816-4967-4c8a-ac22-32e8c2314007",
-          "color": null,
-          "size": "L",
-          "stockQuantity": 948,
-          "inStock": true
-        },
-        {
           "id": "9711d215-1283-4685-9d07-49f6509baf94",
           "color": null,
           "size": "XL",
           "stockQuantity": 948,
+          "inStock": true
+        },
+        {
+          "id": "5e701816-4967-4c8a-ac22-32e8c2314007",
+          "color": null,
+          "size": "L",
+          "stockQuantity": 947,
           "inStock": true
         }
       ]
@@ -37,13 +37,6 @@
       "inStock": true,
       "variants": [
         {
-          "id": "1be1ce9d-7207-4a15-8636-696d30950547",
-          "color": "Off-White",
-          "size": "L",
-          "stockQuantity": 347,
-          "inStock": true
-        },
-        {
           "id": "c0aea0e5-4eb3-4fd2-b1e3-53620a875f1f",
           "color": "Off-White",
           "size": "XL",
@@ -54,7 +47,7 @@
           "id": "a17c840e-c82d-482e-b71b-2d6f4daabe10",
           "color": "Navy Blue",
           "size": "L",
-          "stockQuantity": 349,
+          "stockQuantity": 348,
           "inStock": true
         },
         {
@@ -62,6 +55,13 @@
           "color": "Jet Black",
           "size": "L",
           "stockQuantity": 348,
+          "inStock": true
+        },
+        {
+          "id": "1be1ce9d-7207-4a15-8636-696d30950547",
+          "color": "Off-White",
+          "size": "L",
+          "stockQuantity": 346,
           "inStock": true
         },
         {
@@ -181,6 +181,46 @@
       "price": 2950,
       "inStock": true,
       "variants": []
+    },
+    {
+      "id": "6a765b75-17bf-4536-ba64-5c111d376fa1",
+      "name": "K8 Wireless Earbuds",
+      "description": "High-Fidelity Stereo Bass\nUltra-Long Battery Life\nDigital Power Display Case\nHD Integrated Microphone\nSmart Touch Controls\nErgonomic Sport Design\nTrue Wireless (TWS) Connectivity",
+      "images": [
+        "https://cdn.businesskoro.com/products/24902504-bf97-4f16-940d-c03eed693f5c.png"
+      ],
+      "price": 400,
+      "inStock": true,
+      "variants": [
+        {
+          "id": "4f7530a4-b00b-4b7d-900c-a79551759fcb",
+          "color": "Black",
+          "size": null,
+          "stockQuantity": 100,
+          "inStock": true
+        },
+        {
+          "id": "db9e0782-f1ec-4a1d-96c5-e914aea984c4",
+          "color": "Red",
+          "size": null,
+          "stockQuantity": 100,
+          "inStock": true
+        },
+        {
+          "id": "ad99fa62-20ba-4783-8cb7-50e0a5e9a3d2",
+          "color": "White",
+          "size": null,
+          "stockQuantity": 100,
+          "inStock": true
+        },
+        {
+          "id": "01baebf1-d3d2-47d1-84e5-4ac07c36409b",
+          "color": "Yellow",
+          "size": null,
+          "stockQuantity": 99,
+          "inStock": true
+        }
+      ]
     },
     {
       "id": "4384f9fc-d380-4928-8272-03016151fc06",
@@ -350,7 +390,7 @@
           "id": "c6ecb383-1560-4bc8-a9f3-4bdae3ac64e4",
           "color": "White",
           "size": null,
-          "stockQuantity": 49,
+          "stockQuantity": 48,
           "inStock": true
         },
         {
@@ -381,6 +421,17 @@
         "https://cdn.businesskoro.com/products/c59d8447-098b-4064-aab8-2fd7c791a55b.webp"
       ],
       "price": 1140,
+      "inStock": true,
+      "variants": []
+    },
+    {
+      "id": "30bfea0a-b349-429b-a091-9923621a4a81",
+      "name": "Siren Alarm Lock For Security",
+      "description": "Product Overview\nKey Features\n\nIdeal for: Main Door, Bedroom Doors, Main Gate\nCondition: New\nFinished: Fine Finished\nAlarm Type: Siren\nUsage/Application: Security\nAlarm Duration: 3 min\nLock Type: Electronic Locks",
+      "images": [
+        "https://cdn.businesskoro.com/products/67468c68-202a-4ff8-a964-47461751552d.jpg"
+      ],
+      "price": 700,
       "inStock": true,
       "variants": []
     },
@@ -466,6 +517,28 @@
         "https://cdn.businesskoro.com/products/2cf69b2d-ed5b-49e4-abe8-6a6a06f018fd.jpg"
       ],
       "price": 1800,
+      "inStock": true,
+      "variants": []
+    },
+    {
+      "id": "a79d3d6c-bdcd-4a6a-af14-c9a6457c0962",
+      "name": "JIO 4G LTE  Mobile WiFi Hotspot Portable Router",
+      "description": "·         Brand: JIO          \n·         Connectivity: 4G LTE (Compatible with all SIM cards)\n·         Network Type: 3G / 4G\n·         Download Speed: Up to 150 Mbps\n·         Battery Capacity: 2100mAh\n·         Frequency: 2.4 GHz\n·         Coverage Radius: Up to 50 meters\n·         Storage: Micro-SD Card Slot\n·         Charging/Connectivity: Micro-USB Port\n·         Standard WAN Support: LTE (Bands 1 / 3 / 5 / 8)",
+      "images": [
+        "https://cdn.businesskoro.com/products/4110afa3-6f7a-4bf9-a0cb-f3a61d8be63f.jpg"
+      ],
+      "price": 1900,
+      "inStock": true,
+      "variants": []
+    },
+    {
+      "id": "781d0a29-1ee6-41a2-b4e2-50d0cb582e00",
+      "name": "M25 Two-In-One Split Wireless DJ Speaker",
+      "description": "This M25 is a two-in-one, splitable wireless DJ speaker that is made from high-quality material, which gives a durable performance for a long time. It features an advanced Bluetooth connection that has a large transmission range and gives 10W high-performance sound quality. It has a big rechargeable battery that gives a long battery and it is compatible with mobile phones, tablets, computers, and other Bluetooth devices.",
+      "images": [
+        "https://cdn.businesskoro.com/products/706d156b-5ae7-4d2a-a926-5baef726f4a5.jpg"
+      ],
+      "price": 1500,
       "inStock": true,
       "variants": []
     },
@@ -661,6 +734,17 @@
       "variants": []
     },
     {
+      "id": "0dad4207-f4a3-408b-bfe5-38c69465af47",
+      "name": "Cordless Electric Screwdriver Tool Kit",
+      "description": "Rechargeable cordless electric screwdriver set with multiple screwdriver bits, socket heads, flexible extension shaft, and carrying case—perfect for home repair, furniture assembly, electronics repair, and daily DIY work.\nProduct Details:\n\nProduct Type: Cordless Electric Screwdriver Kit\nPower Type: Rechargeable / cordless\nIncludes: Electric screwdriver, bits, sockets, flexible shaft, charging cable, carry case\nUse: Screw tightening/removing, small repair, furniture setup, electronics work\nPortable hard case included\nComfortable pistol-grip design\nSuitable for home, office, workshop, and DIY use\n",
+      "images": [
+        "https://cdn.businesskoro.com/legacy-cloudinary/backend/a4f845f6db724862d940-yoekdygxjrht0azt1fhh.webp"
+      ],
+      "price": 1350,
+      "inStock": true,
+      "variants": []
+    },
+    {
       "id": "dcb9792b-a609-4377-af0a-c613fab8d847",
       "name": "Memo CX07 Magnetic Phone Cooler Fan",
       "description": "15W magnetic phone cooler fan with fast cooling performance, designed to reduce overheating during gaming, live streaming, video recording, and long-time mobile use.\nProduct Details:\nModel: CX07\nProduct Type: Magnetic Phone Cooler Fan\nCooling Power: 15W\nFeature: Instant cooling / fast heat reduction\nDesign: Magnetic attach system\nUse: Gaming, live streaming, video recording, heavy phone use\nHelps keep phone performance stable\nCompact and portable design\nSuitable for smartphones with magnetic support or magnetic ring attachment",
@@ -696,7 +780,7 @@
           "id": "ef42a40c-d307-4036-8e26-c880b9c3fe1c",
           "color": "Silver",
           "size": null,
-          "stockQuantity": 81,
+          "stockQuantity": 79,
           "inStock": true
         }
       ]
@@ -721,15 +805,7 @@
       ],
       "price": 1950,
       "inStock": true,
-      "variants": [
-        {
-          "id": "a1327eb1-9b56-4535-b953-351a6cddce43",
-          "color": "Black",
-          "size": null,
-          "stockQuantity": 1,
-          "inStock": true
-        }
-      ]
+      "variants": []
     }
   ],
   "deliveryCharges": {
