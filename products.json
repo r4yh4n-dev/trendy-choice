@@ -37,6 +37,13 @@
       "inStock": true,
       "variants": [
         {
+          "id": "aa090d2e-80e5-446d-8a5a-b98ff0487519",
+          "color": "Jet Black",
+          "size": "L",
+          "stockQuantity": 347,
+          "inStock": true
+        },
+        {
           "id": "c0aea0e5-4eb3-4fd2-b1e3-53620a875f1f",
           "color": "Off-White",
           "size": "XL",
@@ -46,13 +53,6 @@
         {
           "id": "a17c840e-c82d-482e-b71b-2d6f4daabe10",
           "color": "Navy Blue",
-          "size": "L",
-          "stockQuantity": 348,
-          "inStock": true
-        },
-        {
-          "id": "aa090d2e-80e5-446d-8a5a-b98ff0487519",
-          "color": "Jet Black",
           "size": "L",
           "stockQuantity": 348,
           "inStock": true
@@ -193,31 +193,31 @@
       "inStock": true,
       "variants": [
         {
-          "id": "4f7530a4-b00b-4b7d-900c-a79551759fcb",
-          "color": "Black",
+          "id": "01baebf1-d3d2-47d1-84e5-4ac07c36409b",
+          "color": "Yellow",
           "size": null,
-          "stockQuantity": 99,
-          "inStock": true
-        },
-        {
-          "id": "db9e0782-f1ec-4a1d-96c5-e914aea984c4",
-          "color": "Red",
-          "size": null,
-          "stockQuantity": 100,
+          "stockQuantity": 93,
           "inStock": true
         },
         {
           "id": "ad99fa62-20ba-4783-8cb7-50e0a5e9a3d2",
           "color": "White",
           "size": null,
-          "stockQuantity": 100,
+          "stockQuantity": 88,
           "inStock": true
         },
         {
-          "id": "01baebf1-d3d2-47d1-84e5-4ac07c36409b",
-          "color": "Yellow",
+          "id": "db9e0782-f1ec-4a1d-96c5-e914aea984c4",
+          "color": "Red",
           "size": null,
-          "stockQuantity": 99,
+          "stockQuantity": 94,
+          "inStock": true
+        },
+        {
+          "id": "4f7530a4-b00b-4b7d-900c-a79551759fcb",
+          "color": "Black",
+          "size": null,
+          "stockQuantity": 86,
           "inStock": true
         }
       ]
@@ -807,17 +807,6 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/de153bdfb7f786ceda5e-gff71glitmjxrnxoqst5.webp"
       ],
       "price": 1150,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "bbbacf87-a611-4cd6-9679-b27122548df7",
-      "name": "5 in 1 Gaming Combo Pack",
-      "description": "5-in-1 mobile gaming keyboard and mouse converter kit for smartphone gaming. Includes RGB one-hand keyboard, gaming mouse, phone connection adapter, and phone stand. Designed for smoother mobile gameplay with keyboard-mouse control, colorful RGB lighting, and comfortable wrist support\n\ncontroller -  X8",
-      "images": [
-        "https://cdn.businesskoro.com/legacy-cloudinary/backend/21e3ea2149ab96299671-vywwq6mjycil9ferpdm6.webp"
-      ],
-      "price": 1950,
       "inStock": true,
       "variants": []
     }
