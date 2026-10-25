@@ -809,6 +809,17 @@
       "price": 1150,
       "inStock": true,
       "variants": []
+    },
+    {
+      "id": "bbbacf87-a611-4cd6-9679-b27122548df7",
+      "name": "5 in 1 Gaming Combo Pack",
+      "description": "5-in-1 mobile gaming keyboard and mouse converter kit for smartphone gaming. Includes RGB one-hand keyboard, gaming mouse, phone connection adapter, and phone stand. Designed for smoother mobile gameplay with keyboard-mouse control, colorful RGB lighting, and comfortable wrist support\n\ncontroller -  X8",
+      "images": [
+        "https://cdn.businesskoro.com/legacy-cloudinary/backend/21e3ea2149ab96299671-vywwq6mjycil9ferpdm6.webp"
+      ],
+      "price": 1950,
+      "inStock": true,
+      "variants": []
     }
   ],
   "deliveryCharges": {
