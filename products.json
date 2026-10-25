@@ -72,6 +72,13 @@
           "inStock": true
         },
         {
+          "id": "9bd47fa4-1dd6-47ae-8a0b-a63a5c9014dc",
+          "color": "Navy Blue",
+          "size": "XL",
+          "stockQuantity": 349,
+          "inStock": true
+        },
+        {
           "id": "3f3ddbc2-7ee9-4235-9a6f-92f082e83bf4",
           "color": "Cofee",
           "size": "XL",
@@ -81,13 +88,6 @@
         {
           "id": "57be49be-90e2-438f-a934-052db5e54dfb",
           "color": "Jet Black",
-          "size": "XL",
-          "stockQuantity": 350,
-          "inStock": true
-        },
-        {
-          "id": "9bd47fa4-1dd6-47ae-8a0b-a63a5c9014dc",
-          "color": "Navy Blue",
           "size": "XL",
           "stockQuantity": 350,
           "inStock": true
@@ -196,7 +196,7 @@
           "id": "4f7530a4-b00b-4b7d-900c-a79551759fcb",
           "color": "Black",
           "size": null,
-          "stockQuantity": 100,
+          "stockQuantity": 99,
           "inStock": true
         },
         {
@@ -501,10 +501,24 @@
       "inStock": true,
       "variants": [
         {
-          "id": "475d09b6-e331-42e5-84ee-72ba9f75454f",
+          "id": "1fed097e-75cd-48ae-8d16-99be09077069",
           "color": "Red",
           "size": null,
           "stockQuantity": 45,
+          "inStock": true
+        },
+        {
+          "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
+          "color": "Green",
+          "size": null,
+          "stockQuantity": 50,
+          "inStock": true
+        },
+        {
+          "id": "30965634-71f6-4255-9b7a-ac811aca1e77",
+          "color": "orange",
+          "size": null,
+          "stockQuantity": 50,
           "inStock": true
         }
       ]
