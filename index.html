@@ -1027,8 +1027,9 @@ body.sheet-open .toast{animation-name:toastInDown}
             </div>
           </div>
           <div class="field">
-            <label for="fArea">এলাকা</label>
-            <input type="text" id="fArea" name="area" placeholder="এলাকা / থানা" autocomplete="address-level2">
+            <label for="fArea">এলাকা <span class="req">*</span></label>
+            <input type="text" id="fArea" name="area" placeholder="এলাকা / থানা" autocomplete="address-level2" required>
+            <span class="err" id="eArea">এলাকার নাম লিখুন (যেমন: মিরপুর)</span>
           </div>
           <div class="field" style="margin-bottom:0">
             <label for="fNote">নোট (ঐচ্ছিক)</label>
@@ -1345,11 +1346,38 @@ async function fetchJSON(url, timeout, opts) {
   const timer = setTimeout(() => ctrl.abort(), timeout);
   try {
     const res = await fetch(url, Object.assign({ signal: ctrl.signal }, opts || {}));
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    return await res.json();
+    let body = null;
+    try { body = await res.json(); } catch (e) { body = null; }
+    if (!res.ok) {
+      const err = new Error('HTTP ' + res.status);
+      err.status = res.status;
+      err.friendly = friendlyApiError(body, res.status);
+      throw err;
+    }
+    return body;
   } finally {
     clearTimeout(timer);
   }
+}
+
+/* সার্ভারের ইংরেজি এররকে গ্রাহকের বোঝার মতো বাংলায় অনুবাদ */
+function friendlyApiError(body, status) {
+  let msg = '';
+  if (body) {
+    if (Array.isArray(body.message)) msg = body.message.join(' ');
+    else if (body.message) msg = String(body.message);
+    else if (body.error) msg = String(body.error);
+  }
+  const m = msg.toLowerCase();
+  if (m.indexOf('customerarea') > -1) return 'এলাকার নাম দেওয়া হয়নি';
+  if (m.indexOf('please select a size') > -1) return 'পণ্যটির সাইজ নির্বাচন করা হয়নি';
+  if (m.indexOf('please select a color') > -1) return 'পণ্যটির রং নির্বাচন করা হয়নি';
+  if (m.indexOf('product not found') > -1) return 'পণ্যটি এখন আর পাওয়া যাচ্ছে না';
+  if (m.indexOf('bangladeshi mobile') > -1) return 'মোবাইল নম্বরটি সঠিক নয়';
+  if (m.indexOf('is required') > -1) return 'কিছু তথ্য দেওয়া হয়নি';
+  if (status === 404) return 'সার্ভারে অনুরোধটি পাওয়া যায়নি';
+  if (status >= 500) return 'সার্ভারে সমস্যা হয়েছে';
+  return msg && msg.length < 120 ? msg : ('সার্ভার ত্রুটি (HTTP ' + status + ')');
 }
 
 /* ── ক্যাশ: শেষ সফল রেসপন্স ── */
@@ -1890,20 +1918,23 @@ function validateStep1() {
   const address  = $('#fAddress').value.trim();
   const division = $('#fDivision').value;
   const district = $('#fDistrict').value;
+  const area     = $('#fArea').value.trim();
 
   const badName     = name.length < 3;
   const badPhone    = !validPhone(phoneRaw);
   const badAddress  = address.length < 10;
   const badDivision = !division;
   const badDistrict = !district;
+  const badArea     = area.length < 2;
 
   setBad('#fName', badName);
   setBad('#fPhone', badPhone);
   setBad('#fAddress', badAddress);
   setBad('#fDivision', badDivision);
   setBad('#fDistrict', badDistrict);
+  setBad('#fArea', badArea);
 
-  if (badName || badPhone || badAddress || badDivision || badDistrict) {
+  if (badName || badPhone || badAddress || badDivision || badDistrict || badArea) {
     const first = document.querySelector('#coStep1 .field.bad input, #coStep1 .field.bad select, #coStep1 .field.bad textarea');
     if (first) { first.focus(); first.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
     showToast('কিছু তথ্য ঠিক নেই — লাল চিহ্নগুলো দেখুন');
@@ -2054,6 +2085,8 @@ async function submitOrder(e) {
   }
 
   hideCoError();
+  // কার্ট খালি থাকলে কিছু পাঠানো হয় না — ভুয়া সফল স্ক্রিন দেখানো চলবে না
+  if (!cart.length) { showToast('কার্ট খালি — আগে পণ্য যোগ করুন'); return; }
   state.sending = true;
 
   const btn = $('#coSubmit');
@@ -2063,6 +2096,7 @@ async function submitOrder(e) {
   const phone = phoneRaw.replace(/^\+?88/, '').replace(/[\s\-()]/g, '');
   const items = cart.slice();
   const failed = [];
+  let failReason = '';
   let okCount = 0;
   let serverFinal = null;   // সার্ভার চূড়ান্ত দাম/ছাড় দিলে সেটা দেখাব
 
@@ -2110,6 +2144,12 @@ async function submitOrder(e) {
       okCount++;
     } catch (err) {
       failed.push(item);
+      if (!failReason) {
+        if (err && err.friendly) failReason = err.friendly;
+        else if (err && err.name === 'AbortError') failReason = 'সার্ভার সময়মতো উত্তর দেয়নি';
+        else if (err && err.name === 'TypeError') failReason = 'সার্ভারে সংযোগ করা যায়নি (ইন্টারনেট বা সার্ভার সমস্যা)';
+        else failReason = 'সার্ভারে সমস্যা হয়েছে';
+      }
     }
   }
 
@@ -2141,7 +2181,9 @@ async function submitOrder(e) {
   renderCheckoutItems();
 
   const names = failed.map(f => '“' + (f.name || 'পণ্য') + '”').join(', ');
-  showCoError('অর্ডার পাঠানো যায়নি — ' + names + ' পণ্যটির অর্ডার সম্পন্ন হয়নি। কার্টে রেখে দেওয়া হয়েছে — আবার চেষ্টা করুন বা নিচের বাটন থেকে সোজা পাঠান।');
+  // কারণ থাকলে সেটাও দেখাই — শুধু "পাঠানো যায়নি" বলে গ্রাহককে অন্ধকারে রাখা হবে না
+  const why = failReason ? ' (' + failReason + ')' : '';
+  showCoError('অর্ডার পাঠানো যায়নি — ' + names + ' পণ্যটির অর্ডার সম্পন্ন হয়নি' + why + '। কার্টে রেখে দেওয়া হয়েছে — আবার চেষ্টা করুন বা নিচের বাটন থেকে সোজা পাঠান।');
 
   // WhatsApp / Messenger ফলব্যাক — ব্যর্থ আইটেমগুলোসহ পূর্ণ অর্ডার
   const t = cartTotals();
