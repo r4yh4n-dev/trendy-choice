@@ -37,17 +37,17 @@
       "inStock": true,
       "variants": [
         {
+          "id": "c0aea0e5-4eb3-4fd2-b1e3-53620a875f1f",
+          "color": "Off-White",
+          "size": "XL",
+          "stockQuantity": 349,
+          "inStock": true
+        },
+        {
           "id": "aa090d2e-80e5-446d-8a5a-b98ff0487519",
           "color": "Jet Black",
           "size": "L",
           "stockQuantity": 347,
-          "inStock": true
-        },
-        {
-          "id": "c0aea0e5-4eb3-4fd2-b1e3-53620a875f1f",
-          "color": "Off-White",
-          "size": "XL",
-          "stockQuantity": 350,
           "inStock": true
         },
         {
@@ -79,17 +79,17 @@
           "inStock": true
         },
         {
-          "id": "3f3ddbc2-7ee9-4235-9a6f-92f082e83bf4",
-          "color": "Cofee",
-          "size": "XL",
-          "stockQuantity": 347,
-          "inStock": true
-        },
-        {
           "id": "57be49be-90e2-438f-a934-052db5e54dfb",
           "color": "Jet Black",
           "size": "XL",
           "stockQuantity": 350,
+          "inStock": true
+        },
+        {
+          "id": "3f3ddbc2-7ee9-4235-9a6f-92f082e83bf4",
+          "color": "Cofee",
+          "size": "XL",
+          "stockQuantity": 346,
           "inStock": true
         }
       ]
@@ -193,31 +193,31 @@
       "inStock": true,
       "variants": [
         {
-          "id": "01baebf1-d3d2-47d1-84e5-4ac07c36409b",
-          "color": "Yellow",
-          "size": null,
-          "stockQuantity": 93,
-          "inStock": true
-        },
-        {
-          "id": "ad99fa62-20ba-4783-8cb7-50e0a5e9a3d2",
-          "color": "White",
-          "size": null,
-          "stockQuantity": 88,
-          "inStock": true
-        },
-        {
-          "id": "db9e0782-f1ec-4a1d-96c5-e914aea984c4",
+          "id": "e87ed0f0-df1d-420d-8e08-b943313a535f",
           "color": "Red",
           "size": null,
-          "stockQuantity": 94,
+          "stockQuantity": 199,
           "inStock": true
         },
         {
-          "id": "4f7530a4-b00b-4b7d-900c-a79551759fcb",
+          "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 86,
+          "stockQuantity": 200,
+          "inStock": true
+        },
+        {
+          "id": "0f8c027d-806e-4901-9787-0740f1494984",
+          "color": "White",
+          "size": null,
+          "stockQuantity": 200,
+          "inStock": true
+        },
+        {
+          "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
+          "color": "Yellow",
+          "size": null,
+          "stockQuantity": 200,
           "inStock": true
         }
       ]
@@ -252,17 +252,6 @@
         "https://cdn.businesskoro.com/products/65ae4d77-6759-4a91-8b2b-724ef0e8e8ab.webp"
       ],
       "price": 850,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "17f7d7d3-a7a5-479d-a955-35a6803b1af2",
-      "name": "WiFi Router Cover Box ",
-      "description": "Features:\n\n1. Perfectly Matched Size: Designed specifically for standard routers, this WiFi router box measures 9.6 x 5.5 x 2.4 inch. It features ventilation holes and does not interfere with signals.\n\n2. Safe & Durable: This router storage box is made from high-quality plastic, making it lightweight, durable and easy to clean. It effectively protects your equipment from pets, ensuring it lasts a long time and giving you peace of mind.\n\n3. Say Goodbye to Clutter: It has pre-drilled holes for cables and a wall-mounted design with adhesive or perforated mounting options to suit your needs. It is ideal for keeping your indoor space neat and tidy.\n\n4. Multiple Usage Scenarios: With its simple solid color design, the router box blends perfectly with modern interior styles, combining fashion and practicality. It can be used in many settings, including living rooms, bedrooms and offices.\n\nPackage includes: 1Pc * router storage box\n\nNotes:\n\n1. Due to the light and screen setting difference, the item's color may be slightly different from the pictures.\n\n2. Please allow slight dimension difference due to different manual measurement. Thank you for your understanding.",
-      "images": [
-        "https://cdn.businesskoro.com/products/7e41b579-c738-41fb-b1a3-553ab80b740c.webp"
-      ],
-      "price": 400,
       "inStock": true,
       "variants": []
     },
@@ -390,7 +379,7 @@
           "id": "c6ecb383-1560-4bc8-a9f3-4bdae3ac64e4",
           "color": "White",
           "size": null,
-          "stockQuantity": 48,
+          "stockQuantity": 46,
           "inStock": true
         },
         {
@@ -481,12 +470,12 @@
     },
     {
       "id": "675007e7-97b4-4a4f-ad55-eae0e6855432",
-      "name": "MiLi MiTag Android Device – Compatible with Google’s Find My Device",
+      "name": "MiLi MiTag Android and iphone Device – Compatible with Google’s Find My Device",
       "description": "The MiLi MiTag is a compact Bluetooth tracker designed specifically for Android users, offering seamless integration with Google’s Find My Device network. This allows users to locate personal items such as keys, wallets, bags, and even pets directly through the Google Find My Device app, without the need for additional software.​",
       "images": [
         "https://cdn.businesskoro.com/products/f336b43c-d02a-4e0c-ac5c-f65596d0857e.jpg"
       ],
-      "price": 800,
+      "price": 1050,
       "inStock": true,
       "variants": []
     },
@@ -501,6 +490,13 @@
       "inStock": true,
       "variants": [
         {
+          "id": "30965634-71f6-4255-9b7a-ac811aca1e77",
+          "color": "orange",
+          "size": null,
+          "stockQuantity": 49,
+          "inStock": true
+        },
+        {
           "id": "1fed097e-75cd-48ae-8d16-99be09077069",
           "color": "Red",
           "size": null,
@@ -510,13 +506,6 @@
         {
           "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
           "color": "Green",
-          "size": null,
-          "stockQuantity": 50,
-          "inStock": true
-        },
-        {
-          "id": "30965634-71f6-4255-9b7a-ac811aca1e77",
-          "color": "orange",
           "size": null,
           "stockQuantity": 50,
           "inStock": true
@@ -553,17 +542,6 @@
         "https://cdn.businesskoro.com/products/706d156b-5ae7-4d2a-a926-5baef726f4a5.jpg"
       ],
       "price": 1500,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "c0f826a4-d9d3-4d80-af2a-28b562aec859",
-      "name": "Hollyland Lark M2 1:1 mastercopy",
-      "description": "Hollyland LARK M2 Wireless Microphone আপনার ভিডিও, লাইভ স্ট্রিমিং, ইন্টারভিউ, ভ্লগ, অনলাইন ক্লাস এবং কনটেন্ট ক্রিয়েশনের জন্য একটি দারুণ সমাধান। Crystal Clear HD Audio এবং Smart ENC Noise Reduction প্রযুক্তি আপনার কণ্ঠকে আরও পরিষ্কার ও প্রফেশনালভাবে রেকর্ড করতে সাহায্য করে।\n\nPlug & Play ডিজাইনের কারণে কোনো অ্যাপ বা জটিল সেটআপের প্রয়োজন নেই। USB Type-C ডিভাইসে সরাসরি ব্যবহার করা যায়, এছাড়াও আপনার ডিভাইস অনুযায়ী প্রয়োজনীয় Converter সম্পূর্ণ ফ্রি প্রদান করা হবে, ফলে Android, iPhone, Micro USB, USB-A, Laptop, PC ও অন্যান্য Supported Device-এ সহজেই ব্যবহার করতে পারবেন।",
-      "images": [
-        "https://cdn.businesskoro.com/products/6a847f67-3f74-49a8-a93c-6a671223d2d5.png"
-      ],
-      "price": 1400,
       "inStock": true,
       "variants": []
     },
@@ -807,6 +785,17 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/de153bdfb7f786ceda5e-gff71glitmjxrnxoqst5.webp"
       ],
       "price": 1150,
+      "inStock": true,
+      "variants": []
+    },
+    {
+      "id": "bbbacf87-a611-4cd6-9679-b27122548df7",
+      "name": "5 in 1 Gaming Combo Pack",
+      "description": "5-in-1 mobile gaming keyboard and mouse converter kit for smartphone gaming. Includes RGB one-hand keyboard, gaming mouse, phone connection adapter, and phone stand. Designed for smoother mobile gameplay with keyboard-mouse control, colorful RGB lighting, and comfortable wrist support\n\ncontroller -  X8",
+      "images": [
+        "https://cdn.businesskoro.com/legacy-cloudinary/backend/21e3ea2149ab96299671-vywwq6mjycil9ferpdm6.webp"
+      ],
+      "price": 1950,
       "inStock": true,
       "variants": []
     }
