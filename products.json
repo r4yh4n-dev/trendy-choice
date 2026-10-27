@@ -193,31 +193,31 @@
       "inStock": true,
       "variants": [
         {
-          "id": "e87ed0f0-df1d-420d-8e08-b943313a535f",
-          "color": "Red",
-          "size": null,
-          "stockQuantity": 199,
-          "inStock": true
-        },
-        {
           "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 200,
+          "stockQuantity": 191,
           "inStock": true
         },
         {
           "id": "0f8c027d-806e-4901-9787-0740f1494984",
           "color": "White",
           "size": null,
-          "stockQuantity": 200,
+          "stockQuantity": 198,
           "inStock": true
         },
         {
           "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 200,
+          "stockQuantity": 195,
+          "inStock": true
+        },
+        {
+          "id": "e87ed0f0-df1d-420d-8e08-b943313a535f",
+          "color": "Red",
+          "size": null,
+          "stockQuantity": 198,
           "inStock": true
         }
       ]
@@ -425,17 +425,6 @@
       "variants": []
     },
     {
-      "id": "38eaef70-f954-40e5-b415-10d9162de645",
-      "name": "Baseus PPADM20S 20000mah Adaman Metal Fast Charging Power Bank (100% Original) ",
-      "description": "Battery capacity: 20000mAh/3.7V 74Wh\n\nRated capacity: 12000mAh\n\nInput:\n\niP (presumably Apple):\n\n5V 2A, 9V 2A Max.\n\nMicro:\n\n5V 2A, 9V 2A Max.\n\nType-C:\n\n5V/3A, 5.5V/3A (SCP), 9V/2A Max.\n\nOutput:\n\nUSB1 and USB2:\n\n4.5V 5A, 5V 4.5A, 5V 3A, 9V 2A, 12V 1.5A Max.\n\nType-C:\n\n5V 3A, 9V 2A, 12V 1.5A Max.\n\nUSB1 + USB2:\n\n5V 3A Max.\n\nUSB1 + Type-C:\n\n5V 3A Max.\n\nUSB2 + Type-C:\n\n5V 3A Max.\n\nType-C + USB1 + USB2 Total output power:\n\n5V 3A Max.\n\nInterface:\n\nUSB, Type-C\n\nমনে রাখবেন এটার মাস্টার কপি আপনারা যে নামে কিনতে চান তার অর্ধেক নামে কিনতে পারবেন কিন্তু ওইটাই ঠিকঠাক মতো মোবাইল চার্জ হয় না তাই একটু বুঝে শুনে বিক্রি করবেন",
-      "images": [
-        "https://cdn.businesskoro.com/products/b50fdba9-1642-420e-8524-7c69641f8148.webp"
-      ],
-      "price": 2500,
-      "inStock": true,
-      "variants": []
-    },
-    {
       "id": "ecd85dc4-10a4-4c1a-9e93-0a5a46c41532",
       "name": "Yuoto Explorer 16000 Puffs | 50mg Nic Disposable | Type C Rechargeable",
       "description": "The Yuoto Explorer 16000 offers an extended and satisfying vaping journey. With an impressive 16,000 puffs and a large 20ml e-liquid capacity, this device is built for endurance. Its mesh coil ensures consistent flavor delivery, while the rechargeable battery and clear indicators provide convenience and control. Encased in a sleek crystal finish, the Yuoto Explorer 16000 is a stylish and reliable choice for vapers seeking a long-lasting and enjoyable experience.",
@@ -497,17 +486,17 @@
           "inStock": true
         },
         {
-          "id": "1fed097e-75cd-48ae-8d16-99be09077069",
-          "color": "Red",
-          "size": null,
-          "stockQuantity": 45,
-          "inStock": true
-        },
-        {
           "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
           "color": "Green",
           "size": null,
           "stockQuantity": 50,
+          "inStock": true
+        },
+        {
+          "id": "1fed097e-75cd-48ae-8d16-99be09077069",
+          "color": "Red",
+          "size": null,
+          "stockQuantity": 44,
           "inStock": true
         }
       ]
@@ -772,7 +761,7 @@
           "id": "ef42a40c-d307-4036-8e26-c880b9c3fe1c",
           "color": "Silver",
           "size": null,
-          "stockQuantity": 79,
+          "stockQuantity": 78,
           "inStock": true
         }
       ]
@@ -785,17 +774,6 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/de153bdfb7f786ceda5e-gff71glitmjxrnxoqst5.webp"
       ],
       "price": 1150,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "bbbacf87-a611-4cd6-9679-b27122548df7",
-      "name": "5 in 1 Gaming Combo Pack",
-      "description": "5-in-1 mobile gaming keyboard and mouse converter kit for smartphone gaming. Includes RGB one-hand keyboard, gaming mouse, phone connection adapter, and phone stand. Designed for smoother mobile gameplay with keyboard-mouse control, colorful RGB lighting, and comfortable wrist support\n\ncontroller -  X8",
-      "images": [
-        "https://cdn.businesskoro.com/legacy-cloudinary/backend/21e3ea2149ab96299671-vywwq6mjycil9ferpdm6.webp"
-      ],
-      "price": 1950,
       "inStock": true,
       "variants": []
     }
