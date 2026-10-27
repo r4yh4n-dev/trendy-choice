@@ -44,13 +44,6 @@
           "inStock": true
         },
         {
-          "id": "aa090d2e-80e5-446d-8a5a-b98ff0487519",
-          "color": "Jet Black",
-          "size": "L",
-          "stockQuantity": 347,
-          "inStock": true
-        },
-        {
           "id": "a17c840e-c82d-482e-b71b-2d6f4daabe10",
           "color": "Navy Blue",
           "size": "L",
@@ -76,6 +69,13 @@
           "color": "Navy Blue",
           "size": "XL",
           "stockQuantity": 349,
+          "inStock": true
+        },
+        {
+          "id": "aa090d2e-80e5-446d-8a5a-b98ff0487519",
+          "color": "Jet Black",
+          "size": "L",
+          "stockQuantity": 346,
           "inStock": true
         },
         {
@@ -193,31 +193,31 @@
       "inStock": true,
       "variants": [
         {
-          "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
-          "color": "Black",
+          "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
+          "color": "Yellow",
           "size": null,
-          "stockQuantity": 191,
+          "stockQuantity": 193,
           "inStock": true
         },
         {
           "id": "0f8c027d-806e-4901-9787-0740f1494984",
           "color": "White",
           "size": null,
-          "stockQuantity": 198,
+          "stockQuantity": 195,
           "inStock": true
         },
         {
-          "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
-          "color": "Yellow",
+          "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
+          "color": "Black",
           "size": null,
-          "stockQuantity": 195,
+          "stockQuantity": 189,
           "inStock": true
         },
         {
           "id": "e87ed0f0-df1d-420d-8e08-b943313a535f",
           "color": "Red",
           "size": null,
-          "stockQuantity": 198,
+          "stockQuantity": 196,
           "inStock": true
         }
       ]
