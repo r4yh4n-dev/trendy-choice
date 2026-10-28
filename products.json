@@ -196,14 +196,14 @@
           "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 190,
+          "stockQuantity": 189,
           "inStock": true
         },
         {
           "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 182,
+          "stockQuantity": 180,
           "inStock": true
         },
         {
