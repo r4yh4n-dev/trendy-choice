@@ -193,31 +193,31 @@
       "inStock": true,
       "variants": [
         {
-          "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
-          "color": "Black",
-          "size": null,
-          "stockQuantity": 167,
-          "inStock": true
-        },
-        {
           "id": "e87ed0f0-df1d-420d-8e08-b943313a535f",
           "color": "Red",
           "size": null,
-          "stockQuantity": 189,
+          "stockQuantity": 185,
           "inStock": true
         },
         {
           "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 186,
+          "stockQuantity": 180,
+          "inStock": true
+        },
+        {
+          "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
+          "color": "Black",
+          "size": null,
+          "stockQuantity": 162,
           "inStock": true
         },
         {
           "id": "0f8c027d-806e-4901-9787-0740f1494984",
           "color": "White",
           "size": null,
-          "stockQuantity": 184,
+          "stockQuantity": 180,
           "inStock": true
         }
       ]
@@ -307,17 +307,6 @@
         "https://cdn.businesskoro.com/products/05aa0caa-c89c-476d-aa67-40549239bdd1.jpg"
       ],
       "price": 1450,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "6ebfa545-0faf-443a-897d-c599f38c38e7",
-      "name": "VEN-DENS 10000mAh Power Bank",
-      "description": "VEN-DENS 10000mAh Power Bank (Model: VD-PB058) ।\n\nব্র্যান্ড: VEN-DENS\n\nমডেল: VD-PB058\n\nব্যাটারি ক্যাপাসিটি: 10,000 mAh\n\nডিসপ্লে/ইন্ডিকেটর: LED ইন্ডিকেটর / চার্জ লেভেল লাইট\n\nমেটেরিয়াল: ABS + Fireproof PC Shell (টেকসই ও ফায়ার-প্রুফ)\n\nবিল্ট-ইন চার্জিং কেবল (Built-in Cables): সাথে আলাদা ক্যাবল বহনের দরকার নেই; এর সাথেই Type-C, Micro-USB এবং iPhone (Lightning) ক্যাবল যুক্ত করা আছে।\n\nফ্লাইট ফ্রেন্ডলি (Flight Friendly): বিমানে ভ্রমণের সময় সাথে বহন করার জন্য উপযুক্ত ও নিরাপদ।\n\nহাই-কোয়ালিটি ব্যাটারি: ওভার-চার্জিং, ওভার-হিটিং এবং শর্ট সার্কিট সুরক্ষার জন্য স্মার্ট আইসি চিপযুক্ত।\n\nসহজে বহনযোগ্য: হালকা ওজন এবং সাথে ঝুলিয়ে রাখার ল্যানইয়ার্ড/লুপ থাকায় সহজে হাতে বা ব্যাগে বহন করা যায়।",
-      "images": [
-        "https://cdn.businesskoro.com/products/930fc955-67a7-4b2c-944f-32f29bd4b0a2.jpg"
-      ],
-      "price": 800,
       "inStock": true,
       "variants": []
     },
@@ -479,24 +468,24 @@
       "inStock": true,
       "variants": [
         {
+          "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
+          "color": "Green",
+          "size": null,
+          "stockQuantity": 48,
+          "inStock": true
+        },
+        {
           "id": "30965634-71f6-4255-9b7a-ac811aca1e77",
           "color": "orange",
           "size": null,
-          "stockQuantity": 48,
+          "stockQuantity": 47,
           "inStock": true
         },
         {
           "id": "1fed097e-75cd-48ae-8d16-99be09077069",
           "color": "Red",
           "size": null,
-          "stockQuantity": 44,
-          "inStock": true
-        },
-        {
-          "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
-          "color": "Green",
-          "size": null,
-          "stockQuantity": 49,
+          "stockQuantity": 41,
           "inStock": true
         }
       ]
