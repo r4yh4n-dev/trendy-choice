@@ -196,28 +196,28 @@
           "id": "e87ed0f0-df1d-420d-8e08-b943313a535f",
           "color": "Red",
           "size": null,
-          "stockQuantity": 185,
+          "stockQuantity": 183,
           "inStock": true
         },
         {
           "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 180,
+          "stockQuantity": 177,
           "inStock": true
         },
         {
           "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 162,
+          "stockQuantity": 155,
           "inStock": true
         },
         {
           "id": "0f8c027d-806e-4901-9787-0740f1494984",
           "color": "White",
           "size": null,
-          "stockQuantity": 180,
+          "stockQuantity": 175,
           "inStock": true
         }
       ]
@@ -471,7 +471,7 @@
           "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
           "color": "Green",
           "size": null,
-          "stockQuantity": 48,
+          "stockQuantity": 47,
           "inStock": true
         },
         {
@@ -678,6 +678,17 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/92a06ab1d06eaee8ff21-qtamque9qnfxfntzwvyb.webp"
       ],
       "price": 1200,
+      "inStock": true,
+      "variants": []
+    },
+    {
+      "id": "d39c1449-7e6d-4966-912f-96d4741d37b2",
+      "name": "Dual Horn Transparent Mecha Speaker",
+      "description": "1. Compatible with Bluetooth 5.3 connection: Enjoy high quality sound with fast and stable signal transmission up to 10 meters.\n2. Dual speakers: With 10W total power and 360° surround sound, this speaker delivers impressive audio performance, visible bass and clear music reproduction.\n3. Unique transparent Mecha design: The unique design of the portable speaker provides a stunning visual experience with multi-dimensional effects that enhance the overall sound quality.\n4. Long-lasting battery life: The wireless speaker is equipped with 1800mAh lithium battery, which can provide up to 3-4 hours of continuous music playback time on a single charge.\n5. Colorful Phantom Streamer: This speaker looks cool and stylish, with dynamic lights that change with the sound, adding an immersive feel to your listening experience.\n\nParameters:\nProduct name: Bluetooth speaker\nBluetooth version: 5.3\nBluetooth distance: about 10 meters\nBluetooth protocol: A2DP, AVRCP\nFrequency response: 60HZ-20KHZ\nNoise level: ≥70dB\nOutput power: 10W\nMemory expansion: up to 32GB Micro SD card (not included)\nBattery capacity: 1800mAh\nCharging time: 2 hours\nCharging port: type-c\nWorking hours: 3-4 hours\nInput power: 5V-1A\nProduct size: about 6.49*2.36*2.51 inches\nProduct color: Black/white\nMaterial: ABS package\n\nIncludes:\n1* Bluetooth speaker 1* User manual 1*type-c cable\n",
+      "images": [
+        "https://cdn.businesskoro.com/legacy-cloudinary/backend/db028f6c61b717ff1ce5-lmxfjdspflaylqcpr3zc.webp"
+      ],
+      "price": 1150,
       "inStock": true,
       "variants": []
     },
