@@ -200,24 +200,24 @@
           "inStock": true
         },
         {
-          "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
-          "color": "Yellow",
+          "id": "0f8c027d-806e-4901-9787-0740f1494984",
+          "color": "White",
           "size": null,
-          "stockQuantity": 177,
+          "stockQuantity": 169,
           "inStock": true
         },
         {
           "id": "e767c0ca-64dc-408e-866a-7314eb03c36f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 155,
+          "stockQuantity": 148,
           "inStock": true
         },
         {
-          "id": "0f8c027d-806e-4901-9787-0740f1494984",
-          "color": "White",
+          "id": "453152e7-36c8-41a1-98a2-46062c0f9ed7",
+          "color": "Yellow",
           "size": null,
-          "stockQuantity": 175,
+          "stockQuantity": 174,
           "inStock": true
         }
       ]
