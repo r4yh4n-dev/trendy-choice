@@ -193,24 +193,24 @@
       "inStock": true,
       "variants": [
         {
-          "id": "13623e08-12ea-4fc7-bae9-5822c9827983",
-          "color": "Red",
+          "id": "518487ff-6e7a-4cf8-a37d-4ea5a6db800e",
+          "color": "Black",
           "size": null,
-          "stockQuantity": 182,
+          "stockQuantity": 134,
           "inStock": true
         },
         {
           "id": "958ec6d2-5b2a-402f-9d7c-364e34542cb8",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 168,
+          "stockQuantity": 166,
           "inStock": true
         },
         {
-          "id": "518487ff-6e7a-4cf8-a37d-4ea5a6db800e",
-          "color": "Black",
+          "id": "13623e08-12ea-4fc7-bae9-5822c9827983",
+          "color": "Red",
           "size": null,
-          "stockQuantity": 138,
+          "stockQuantity": 174,
           "inStock": true
         }
       ]
@@ -311,6 +311,17 @@
         "https://cdn.businesskoro.com/products/930fc955-67a7-4b2c-944f-32f29bd4b0a2.jpg"
       ],
       "price": 800,
+      "inStock": true,
+      "variants": []
+    },
+    {
+      "id": "13a3d6a5-2a8a-4f8b-b655-9a84188682de",
+      "name": "OLAX M100 Power Bank WiFi Router ",
+      "description": "✅ WiFi 6 Technology – 3× faster than WiFi 5 with stronger, more stable connections\n\n✅ Universal SIM Support – Openline for all networks including Dialog, Mobitel, Hutch, Airtel.\n\n✅ Smart Features – Supports SMS, routing, and firewall settings\n\n✅ Dual-Band WiFi – Smooth streaming and gaming even in crowded areas\n\n✅ 10,000mAh Battery – Keep your devices charged for hours\n\n✅ SIM Card Slot – Instant 4G LTE hotspot, no extra device needed\n\n✅ Reverse Charging – Share battery power while staying online\n\n✅ Type-C Port – Fast charging & wired internet for computers\n\n✅ LED Battery Display – Check power levels at a glance\n\n✅ Connect 10+ Devices – Ideal for family, friends, or work teams\n\n\nPerfect For:\n\n✔️ Travelers who need WiFi on the move\n\n✔️ Remote workers & students\n\n✔️ Outdoor activities, events, & road trips\n\n✔️ Emergency backup power & internet",
+      "images": [
+        "https://cdn.businesskoro.com/products/99bc005f-cde9-44f1-a524-eb98bad462d3.jpg"
+      ],
+      "price": 3400,
       "inStock": true,
       "variants": []
     },
@@ -756,17 +767,6 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/de153bdfb7f786ceda5e-gff71glitmjxrnxoqst5.webp"
       ],
       "price": 1150,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "bbbacf87-a611-4cd6-9679-b27122548df7",
-      "name": "5 in 1 Gaming Combo Pack",
-      "description": "5-in-1 mobile gaming keyboard and mouse converter kit for smartphone gaming. Includes RGB one-hand keyboard, gaming mouse, phone connection adapter, and phone stand. Designed for smoother mobile gameplay with keyboard-mouse control, colorful RGB lighting, and comfortable wrist support\n\ncontroller -  X8",
-      "images": [
-        "https://cdn.businesskoro.com/legacy-cloudinary/backend/21e3ea2149ab96299671-vywwq6mjycil9ferpdm6.webp"
-      ],
-      "price": 1950,
       "inStock": true,
       "variants": []
     }
