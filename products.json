@@ -196,7 +196,14 @@
           "id": "958ec6d2-5b2a-402f-9d7c-364e34542cb8",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 161,
+          "stockQuantity": 158,
+          "inStock": true
+        },
+        {
+          "id": "518487ff-6e7a-4cf8-a37d-4ea5a6db800e",
+          "color": "Black",
+          "size": null,
+          "stockQuantity": 120,
           "inStock": true
         },
         {
@@ -204,13 +211,6 @@
           "color": "Red",
           "size": null,
           "stockQuantity": 171,
-          "inStock": true
-        },
-        {
-          "id": "518487ff-6e7a-4cf8-a37d-4ea5a6db800e",
-          "color": "Black",
-          "size": null,
-          "stockQuantity": 126,
           "inStock": true
         }
       ]
@@ -581,7 +581,7 @@
           "id": "97920fa7-df1b-464e-96dd-2285f8c809b5",
           "color": "Golden",
           "size": null,
-          "stockQuantity": 144,
+          "stockQuantity": 143,
           "inStock": true
         }
       ]
