@@ -196,14 +196,14 @@
           "id": "82551066-9e14-4bfb-b90f-93ec3c75e8aa",
           "color": "Red",
           "size": null,
-          "stockQuantity": 31,
+          "stockQuantity": 30,
           "inStock": true
         },
         {
           "id": "42902e55-3be3-439a-bca7-1d9aaa559262",
           "color": "Black",
           "size": null,
-          "stockQuantity": 12,
+          "stockQuantity": 8,
           "inStock": true
         }
       ]
@@ -238,17 +238,6 @@
         "https://cdn.businesskoro.com/products/65ae4d77-6759-4a91-8b2b-724ef0e8e8ab.webp"
       ],
       "price": 850,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "e4f101cf-f9bb-426a-ac0c-db6c3f5a9ba3",
-      "name": "High Power Super Bright Flashlight 3.7V 30000mAh Sanford",
-      "description": "High Power Super Bright Flashlight 3.7V 30000mAh\n\n",
-      "images": [
-        "https://cdn.businesskoro.com/products/c2e5f220-e592-4d1b-8b92-e178f2724b9e.jpg"
-      ],
-      "price": 1200,
       "inStock": true,
       "variants": []
     },
