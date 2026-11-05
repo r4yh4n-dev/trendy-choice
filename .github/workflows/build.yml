@@ -1,0 +1,90 @@
+# ═══════════════════════════════════════════════════════════════════════════
+#  Trendy Choice — auto build & deploy to GitHub Pages
+#  ─────────────────────────────────────────────────────────────────────────
+#  ⚠️  IMPORTANT: this file must live at  .github/workflows/build.yml
+#      in the ROOT of your repository (not inside the site folder).
+#      Copy it there once and GitHub will run it automatically.
+#
+#  What it does
+#    1. runs  node build.mjs   → regenerates p/<slug>/index.html, 404.html,
+#       sitemap.xml, robots.txt, slugs.json from products.json
+#    2. publishes the whole site to GitHub Pages
+#
+#  Manual run:  Actions ▸ "Build & Deploy" ▸ Run workflow
+#  Local run:   node build.mjs
+# ═══════════════════════════════════════════════════════════════════════════
+
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'products.json'
+      - 'index.html'
+      - 'build.mjs'
+      - 'sw.js'
+      - 'manifest.webmanifest'
+      - '404.html'
+      - '.github/workflows/build.yml'
+  schedule:
+    - cron: '15 */3 * * *'   # প্রতি ৩ ঘণ্টায় নতুন পণ্যের পেজ বানাবে
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate product pages & SEO files
+        run: node build.mjs
+
+      - name: Assemble the publish folder
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'node_modules' \
+            --exclude '_site' \
+            --exclude '*.md' \
+            --exclude 'github-workflows' \
+            ./ _site/
+          echo "── published tree ──"
+          find _site -maxdepth 2 -type f | sort | head -40
+          echo "product pages: $(find _site/p -name index.html | wc -l)"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
