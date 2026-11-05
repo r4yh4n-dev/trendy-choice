@@ -79,17 +79,17 @@
           "inStock": true
         },
         {
-          "id": "57be49be-90e2-438f-a934-052db5e54dfb",
-          "color": "Jet Black",
-          "size": "XL",
-          "stockQuantity": 349,
-          "inStock": true
-        },
-        {
           "id": "3f3ddbc2-7ee9-4235-9a6f-92f082e83bf4",
           "color": "Cofee",
           "size": "XL",
           "stockQuantity": 346,
+          "inStock": true
+        },
+        {
+          "id": "57be49be-90e2-438f-a934-052db5e54dfb",
+          "color": "Jet Black",
+          "size": "XL",
+          "stockQuantity": 347,
           "inStock": true
         }
       ]
@@ -124,17 +124,6 @@
         "https://cdn.businesskoro.com/products/4a18aaa4-b308-483a-ba09-5f8c1d4f3827.png"
       ],
       "price": 1150,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "5a905a1e-1cdb-4d5e-974e-4236ae6bcd54",
-      "name": " BOYA BY-MW6 Wireless Lavalier Microphone – Dual Transmitter (original verient)",
-      "description": "Brand: BOYA\nModel: BY-MW6\nType: Wireless Lavalier Microphone\nMicrophone System: Dual Wireless Transmitters\nConnectivity: Wireless\nCharging Case: Yes\nCompatibility: Smartphones, tablets, and compatible devices (via included 2-in-1 adapter)\nColor: Black\nPackage Includes\n2 × Wireless Transmitters\n1 × Wireless Receiver\n1 × Charging Case\n1 × 2-in-1 Adapter\nUser Manual\nPerfect For: YouTub",
-      "images": [
-        "https://cdn.businesskoro.com/products/073b4ecf-0c9f-44c7-aa6e-49e674d38a4d.jpg"
-      ],
-      "price": 1800,
       "inStock": true,
       "variants": []
     },
@@ -193,17 +182,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "82551066-9e14-4bfb-b90f-93ec3c75e8aa",
-          "color": "Red",
-          "size": null,
-          "stockQuantity": 30,
-          "inStock": true
-        },
-        {
           "id": "42902e55-3be3-439a-bca7-1d9aaa559262",
           "color": "Black",
           "size": null,
-          "stockQuantity": 8,
+          "stockQuantity": 0,
+          "inStock": false
+        },
+        {
+          "id": "82551066-9e14-4bfb-b90f-93ec3c75e8aa",
+          "color": "Red",
+          "size": null,
+          "stockQuantity": 21,
           "inStock": true
         }
       ]
@@ -271,17 +260,6 @@
         "https://cdn.businesskoro.com/products/d5ef9dcc-3f90-43b0-9398-6257c25099e8.jpg"
       ],
       "price": 1900,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "4b2a1773-5ad6-4fb7-9691-c96dda205d92",
-      "name": "VEN-DENS 20000mAh Power Bank",
-      "description": "Vendens VD-PB059 Specifications\nSpecificationDetails\nModel\tVendens VD-PB059\nCapacity\t20000mAh\nCharging Cable\tBuilt-in\nLED Torch\tYes\nPort Configuration\tUSB-A\nInput Current\t5V/2A\nOutput Current\t5V/2A\nProtections\tOvercharge, Short Circuit\nDimensions\t15 x 7.5 x 2.5 cm\nWeight\t300g\nMaterial\tPlastic",
-      "images": [
-        "https://cdn.businesskoro.com/products/05aa0caa-c89c-476d-aa67-40549239bdd1.jpg"
-      ],
-      "price": 1450,
       "inStock": true,
       "variants": []
     },
@@ -443,6 +421,13 @@
       "inStock": true,
       "variants": [
         {
+          "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
+          "color": "Green",
+          "size": null,
+          "stockQuantity": 45,
+          "inStock": true
+        },
+        {
           "id": "1fed097e-75cd-48ae-8d16-99be09077069",
           "color": "Red",
           "size": null,
@@ -454,13 +439,6 @@
           "color": "orange",
           "size": null,
           "stockQuantity": 47,
-          "inStock": true
-        },
-        {
-          "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
-          "color": "Green",
-          "size": null,
-          "stockQuantity": 46,
           "inStock": true
         }
       ]
@@ -635,6 +613,17 @@
       "variants": []
     },
     {
+      "id": "c9d7e032-5e9f-4e20-b0b4-7f4cce95861d",
+      "name": "FRB N27 [ 400 ঘন্টা ] Standby Time Wireless Neckband Bluetooth 5.3 Earphone 5 Voice Changer Mode TF Card Slot - Gaming & Music Headset By By EXOTIX",
+      "description": " নতুন FRB N27 Wireless Neckband – একসাথে মজা, পারফরম্যান্স আর স্টাইল!\n\n✨ দারুন সব ফিচার:\n\n✅ 5 Voice Changer Mode \n\n✅ Bluetooth 5.3 – আরও দ্রুত ও স্থিতিশীল কানেকশন\n\n✅ 400 ঘণ্টা ব্যাটারি ব্যাকআপ – বারবার চার্জের ঝামেলা নেই\n\n✅ Magnetic On/Off Switch\n\n✅ Vibration Call Alert – কোন কল মিস হবে না!\n\nআপনার কণ্ঠ বদলে দিন, স্টাইলেও থাকুন সেরা!\n\nনতুন FRB N27 Wireless Neckband – একসাথে মজা, পারফরম্যান্স আর স্টাইল!\n\n✨ দারুন সব ফিচার:\n\n✅ 5 Voice Changer Mode \n\n✅ Bluetooth 5.3 – আরও দ্রুত ও স্থিতিশীল কানেকশন\n\n✅ 400 ঘণ্টা ব্যাটারি ব্যাকআপ – বারবার চার্জের ঝামেলা নেই\n\n✅ Magnetic On/Off Switch\n\n✅ Vibration Call Alert – কোন কল মিস হবে না!",
+      "images": [
+        "https://cdn.businesskoro.com/legacy-cloudinary/backend/a5f73a9cfdaf5b7ab37f-tnxi6eszbt97djygqgsx.webp"
+      ],
+      "price": 800,
+      "inStock": true,
+      "variants": []
+    },
+    {
       "id": "ebd20ecb-7135-4f0a-9b59-95c7de8033fa",
       "name": "140W স্মার্ট ফুল চার্জ সেপারেটর",
       "description": "কাদের জন্য পারফেক্ট?\nআপনিও কি এদের একজন?\n\n🌙\nযারা রাতে চার্জ দিয়ে ঘুমান\nসকালে ফোন গরম, ব্যাটারি দুর্বল — সব সমস্যা শেষ।\n💼\nঅফিসে চার্জ দিয়ে কাজ করেন\nমিটিং চলাকালীন ফুল হলেই অটো কাট, কোনো ঝামেলা নেই।\n🎮\nগেমার / কন্টেন্ট ক্রিয়েটর\n১৪০W ফাস্ট চার্জ + হিট প্রোটেকশন — পারফরম্যান্স অটুট।\n✈️\nফ্রিকোয়েন্ট ট্রাভেলার\nএয়ারপোর্ট / হোটেলের আনস্টেবল পাওয়ার থেকে সম্পূর্ণ সুরক্ষা।\n👨‍👩‍👧\nপরিবারের সবার ফোনে\nএকটাই সেপারেটর, সবাই ব্যবহার করতে পারে — iPhone, Android, iPad সব।\n🛡️\nযারা ফোন নতুনের মতো রাখতে চান\nব্যাটারি হেলথ ১০০% রাখার একমাত্র সহজ সমাধান।",
@@ -725,7 +714,7 @@
           "id": "ef42a40c-d307-4036-8e26-c880b9c3fe1c",
           "color": "Silver",
           "size": null,
-          "stockQuantity": 78,
+          "stockQuantity": 77,
           "inStock": true
         }
       ]
