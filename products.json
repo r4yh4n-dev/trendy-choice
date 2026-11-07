@@ -40,14 +40,21 @@
           "id": "c0aea0e5-4eb3-4fd2-b1e3-53620a875f1f",
           "color": "Off-White",
           "size": "XL",
-          "stockQuantity": 349,
+          "stockQuantity": 348,
+          "inStock": true
+        },
+        {
+          "id": "57be49be-90e2-438f-a934-052db5e54dfb",
+          "color": "Jet Black",
+          "size": "XL",
+          "stockQuantity": 346,
           "inStock": true
         },
         {
           "id": "1be1ce9d-7207-4a15-8636-696d30950547",
           "color": "Off-White",
           "size": "L",
-          "stockQuantity": 345,
+          "stockQuantity": 344,
           "inStock": true
         },
         {
@@ -83,13 +90,6 @@
           "color": "Cofee",
           "size": "XL",
           "stockQuantity": 346,
-          "inStock": true
-        },
-        {
-          "id": "57be49be-90e2-438f-a934-052db5e54dfb",
-          "color": "Jet Black",
-          "size": "XL",
-          "stockQuantity": 347,
           "inStock": true
         }
       ]
@@ -182,31 +182,31 @@
       "inStock": true,
       "variants": [
         {
-          "id": "c2560057-ecfe-4c26-8f8d-0b08a52983b6",
-          "color": "Yellow",
+          "id": "40452f87-e485-4097-bbe6-85f4de70cb19",
+          "color": "White",
           "size": null,
-          "stockQuantity": 41,
+          "stockQuantity": 58,
           "inStock": true
         },
         {
           "id": "3ac9edd3-8480-4aeb-9e6d-10b03f69525f",
           "color": "Red",
           "size": null,
-          "stockQuantity": 36,
+          "stockQuantity": 29,
           "inStock": true
         },
         {
           "id": "19364657-7af2-4e3c-b04a-428ce066251f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 127,
+          "stockQuantity": 114,
           "inStock": true
         },
         {
-          "id": "40452f87-e485-4097-bbe6-85f4de70cb19",
-          "color": "White",
+          "id": "c2560057-ecfe-4c26-8f8d-0b08a52983b6",
+          "color": "Yellow",
           "size": null,
-          "stockQuantity": 67,
+          "stockQuantity": 33,
           "inStock": true
         }
       ]
@@ -342,7 +342,7 @@
           "id": "e3c93eb8-1d28-4eb0-8411-e5d4379a6862",
           "color": "Pink",
           "size": null,
-          "stockQuantity": 46,
+          "stockQuantity": 45,
           "inStock": true
         }
       ]
