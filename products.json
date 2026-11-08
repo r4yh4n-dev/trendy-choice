@@ -75,7 +75,7 @@
           "id": "9bd47fa4-1dd6-47ae-8a0b-a63a5c9014dc",
           "color": "Navy Blue",
           "size": "XL",
-          "stockQuantity": 349,
+          "stockQuantity": 348,
           "inStock": true
         },
         {
@@ -185,14 +185,7 @@
           "id": "40452f87-e485-4097-bbe6-85f4de70cb19",
           "color": "White",
           "size": null,
-          "stockQuantity": 43,
-          "inStock": true
-        },
-        {
-          "id": "19364657-7af2-4e3c-b04a-428ce066251f",
-          "color": "Black",
-          "size": null,
-          "stockQuantity": 101,
+          "stockQuantity": 39,
           "inStock": true
         },
         {
@@ -203,10 +196,17 @@
           "inStock": true
         },
         {
+          "id": "19364657-7af2-4e3c-b04a-428ce066251f",
+          "color": "Black",
+          "size": null,
+          "stockQuantity": 96,
+          "inStock": true
+        },
+        {
           "id": "c2560057-ecfe-4c26-8f8d-0b08a52983b6",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 28,
+          "stockQuantity": 19,
           "inStock": true
         }
       ]
@@ -331,7 +331,7 @@
           "id": "c6ecb383-1560-4bc8-a9f3-4bdae3ac64e4",
           "color": "White",
           "size": null,
-          "stockQuantity": 46,
+          "stockQuantity": 45,
           "inStock": true
         }
       ]
@@ -512,24 +512,10 @@
       "inStock": true,
       "variants": [
         {
-          "id": "730a09d7-43dd-4983-8fad-372f47c6cfb8",
-          "color": "Pink",
-          "size": null,
-          "stockQuantity": 60,
-          "inStock": true
-        },
-        {
-          "id": "2a2135ec-7b98-47c7-98f6-9d6a4402624c",
+          "id": "ed62e7bb-1650-440e-93f1-08682f76c04e",
           "color": "Purple",
           "size": null,
-          "stockQuantity": 60,
-          "inStock": true
-        },
-        {
-          "id": "9fd8fdd1-da17-4a11-a203-95b754b711ea",
-          "color": "White",
-          "size": null,
-          "stockQuantity": 57,
+          "stockQuantity": 50,
           "inStock": true
         }
       ]
