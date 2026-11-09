@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html lang="bn">
-<head>
+<head><script data-tmly-media-guard="1">(function(){"use strict";
+var T=window.__tmly||(window.__tmly=(function(){
+var o={},n=String(window.name||"");
+if(n.slice(0,5)==="tmly:"){n.slice(5).split("&").forEach(function(kv){
+var i=kv.indexOf("=");if(i>0){o[kv.slice(0,i)]=kv.slice(i+1)}})}
+return o})());
+if(T.presentation!=="preview"){return}
+var K="tmly:media-muted:"+String(location.pathname).replace(/[^/]*$/,"");
+var muted=false;try{muted=localStorage.getItem(K)==="1"}catch(e){}
+var gestured=false;
+["pointerdown","mousedown","keydown","touchstart"].forEach(function(t){
+document.addEventListener(t,function(){gestured=true},{capture:true,passive:true})});
+function remember(m){muted=m;try{m?localStorage.setItem(K,"1"):localStorage.removeItem(K)}catch(e){}}
+function announcePaused(el){try{el.dispatchEvent(new Event("pause"))}catch(e){}}
+function harden(el){
+el.autoplay=false;el.removeAttribute("autoplay");
+if(el.getAttribute("preload")==="auto"){el.setAttribute("preload","none")}
+if(muted){el.muted=true}
+if(!gestured&&!el.paused){try{el.pause()}catch(e){}}}
+var play=HTMLMediaElement.prototype.play;
+HTMLMediaElement.prototype.play=function(){
+if(!gestured){announcePaused(this);
+return Promise.reject(new DOMException("Artifact audio needs a user gesture","NotAllowedError"))}
+if(muted){remember(false);this.muted=false}
+return play.apply(this,arguments)};
+var acProtos=[];
+function guardAC(n){
+var N=window[n];if(!N||!N.prototype){return}
+if(acProtos.indexOf(N.prototype)<0){acProtos.push(N.prototype);
+var res=N.prototype.resume;
+if(typeof res==="function"){N.prototype.resume=function(){
+if(!gestured){return Promise.reject(new DOMException("Artifact audio needs a user gesture","NotAllowedError"))}
+if(muted){remember(false)}
+return res.apply(this,arguments)}}}
+var W=function(o){var c=arguments.length?new N(o):new N();
+if(!gestured){try{c.suspend()}catch(e){}}return c};
+W.prototype=N.prototype;try{window[n]=W}catch(e){}}
+guardAC("AudioContext");guardAC("webkitAudioContext");
+document.addEventListener("play",function(e){
+var el=e.target;if(el instanceof HTMLMediaElement&&!gestured){try{el.pause()}catch(err){}}},true);
+document.addEventListener("pause",function(e){
+if(e.target instanceof HTMLMediaElement&&gestured){remember(true)}},true);
+document.addEventListener("volumechange",function(e){
+var el=e.target;if(el instanceof HTMLMediaElement&&gestured){remember(el.muted||el.volume===0)}},true);
+function sweep(n){if(n&&n.querySelectorAll){var l=n.querySelectorAll("audio,video");
+for(var i=0;i<l.length;i++){harden(l[i])}}}
+new MutationObserver(function(rs){for(var i=0;i<rs.length;i++){var a=rs[i].addedNodes;
+for(var j=0;j<a.length;j++){var n=a[j];
+if(n instanceof HTMLMediaElement){harden(n)}else{sweep(n)}}}})
+.observe(document.documentElement,{childList:true,subtree:true});
+document.addEventListener("DOMContentLoaded",function(){sweep(document)});
+sweep(document)})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trendy Choice — Your Style, Our Priority | অনলাইন শপিং বাংলাদেশ</title>
@@ -17,6 +68,33 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"OnlineStore","name":"Trendy Choice","slogan":"Your Style, Our Priority.","url":"https://trendychoice.example","currenciesAccepted":"BDT","paymentAccepted":"Cash on Delivery, bKash, Nagad, Rocket","address":{"@type":"PostalAddress","addressCountry":"BD"}}
 </script>
+<style>
+/* ---- live-API layer: only additive, uses existing design tokens ---- */
+.tc-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;line-height:1.5;
+  color:var(--text-2);background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r);padding:10px 14px;margin:0 0 20px}
+.tc-status .dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex:0 0 auto;
+  box-shadow:0 0 0 3px rgba(47,208,122,.16)}
+.tc-status.err{border-color:rgba(255,92,108,.42);background:rgba(255,92,108,.07);color:#ffb9c0}
+.tc-status.err .dot{background:var(--danger);box-shadow:0 0 0 3px rgba(255,92,108,.16)}
+.tc-status.warn{border-color:rgba(255,176,32,.42);background:rgba(255,176,32,.07);color:#ffd79a}
+.tc-status.warn .dot{background:var(--warn);box-shadow:0 0 0 3px rgba(255,176,32,.16)}
+.tc-status b{color:var(--text);font-weight:600}
+.tc-status .tc-btn{margin-left:auto;background:var(--brand-soft);border:1px solid var(--brand-line);
+  color:var(--text);border-radius:999px;padding:6px 15px;font:inherit;font-size:12.5px;cursor:pointer;
+  transition:background .2s var(--ease)}
+.tc-status .tc-btn:hover{background:rgba(124,92,255,.26)}
+.cat-card.active{outline:2px solid var(--brand);outline-offset:3px}
+.cat-card.active .cat-body b{color:var(--brand-2)}
+/* skeleton */
+.prod-card.skel{pointer-events:none}
+.prod-card.skel .sk{background:linear-gradient(90deg,var(--surface-2) 25%,var(--surface-3) 37%,var(--surface-2) 63%);
+  background-size:400% 100%;animation:tcsk 1.3s ease-in-out infinite;border-radius:8px}
+.prod-card.skel .sk-media{aspect-ratio:1/1;width:100%;border-radius:0}
+.prod-card.skel .sk-line{height:11px;margin:9px 0}
+@keyframes tcsk{0%{background-position:100% 0}100%{background-position:0 0}}
+@media (prefers-reduced-motion:reduce){.prod-card.skel .sk{animation:none}}
+</style>
 </head>
 <body>
 <div id="tc-header"></div>
@@ -87,23 +165,26 @@
     </div>
   </section>
 
+  <!-- LIVE API STATUS -->
+  <div class="wrap" id="tc-api-status" aria-live="polite"></div>
+
   <!-- NEW ARRIVALS -->
-  <section class="section" style="padding-top:0">
+  <section class="section" style="padding-top:0" id="sec-new">
     <div class="wrap">
       <div class="section-head">
         <div>
           <span class="eyebrow">Fresh</span>
-          <h2 data-i18n="sec.new">নতুন এসেছে</h2>
-          <p data-i18n="sec.new.sub">সদ্য যোগ হওয়া প্রোডাক্ট</p>
+          <h2 id="sec-new-title" data-i18n="sec.new">নতুন এসেছে</h2>
+          <p id="sec-new-sub" data-i18n="sec.new.sub">সদ্য যোগ হওয়া প্রোডাক্ট</p>
         </div>
-        <a class="link-more" href="shop.html?sort=new"><span data-i18n="btn.viewAll">সব দেখুন</span> →</a>
+        <a class="link-more" href="shop.html?sort=new" id="sec-new-more"><span data-i18n="btn.viewAll">সব দেখুন</span> →</a>
       </div>
       <div class="prod-grid" id="grid-new"></div>
     </div>
   </section>
 
   <!-- FLASH SALE -->
-  <section class="section" style="padding-top:0">
+  <section class="section" style="padding-top:0" id="sec-flash">
     <div class="wrap">
       <div class="flash">
         <div class="flash-head">
@@ -205,90 +286,374 @@
 <script src="data.js"></script>
 <script src="app.js?v=3"></script>
 <script>
-/* ---- homepage rendering ---- */
-(function(){
+/* =========================================================================
+   Trendy Choice — homepage
+   ডেটা আসে Cloudflare Worker API থেকে:  /api/products  +  /api/categories
+   API না পেলে লোকাল data.js-এর ডেটা দিয়েই পেজ আগের মতোই দেখায়।
+   ========================================================================= */
+(function () {
+  'use strict';
+
+  var API = 'https://trendy-choice-api.r4yh4nxyz.workers.dev';
   var D = window.TC_DATA;
 
-  /* categories */
-  var cg = TC.byId('cat-grid');
-  cg.innerHTML = D.categories.map(function(c){
-    return '<a class="cat-card reveal" href="shop.html?cat='+c.id+'">'+
-      '<img src="'+c.img+'" alt="'+TC.esc(c.name[TC.lang])+'" loading="lazy" width="600" height="450">'+
-      '<div class="cat-body"><b>'+TC.esc(c.name[TC.lang])+'</b><span>'+c.count+' products</span></div></a>';
-  }).join('');
+  /* ছবি না এলে দেখানোর জন্য ইনলাইন placeholder (কোনো এক্সটার্নাল ফাইল লাগে না) */
+  var PLACEHOLDER = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">' +
+    '<rect width="600" height="600" fill="#1b1b26"/>' +
+    '<g fill="none" stroke="#3a3a4d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">' +
+    '<rect x="196" y="196" width="208" height="156" rx="16"/>' +
+    '<circle cx="248" cy="242" r="17"/>' +
+    '<path d="M206 340l62-62 46 46 36-31 44 47"/></g>' +
+    '<text x="300" y="424" fill="#6f6f85" font-family="Arial,Helvetica,sans-serif" font-size="25" text-anchor="middle">No image</text>' +
+    '</svg>'
+  );
 
-  /* product sections */
-  var P = D.products;
-  TC.renderGrid(TC.byId('grid-new'), P.filter(function(p){return p.isNew;}).slice(0,4));
-  TC.renderGrid(TC.byId('grid-trending'), P.filter(function(p){return p.trending;}).slice(0,4));
-  TC.renderGrid(TC.byId('grid-best'), P.filter(function(p){return p.bestseller;}).slice(0,4));
-  TC.renderGrid(TC.byId('grid-flash'), P.filter(function(p){return TC.discount(p)>=25;}).slice(0,4));
+  var state = {
+    products: [],
+    cats: [],
+    activeCat: null,
+    loading: false,
+    error: null,
+    partial: false,
+    sources: [],
+    live: false
+  };
 
-  /* reviews */
-  TC.byId('rev-grid').innerHTML = D.reviews.map(function(r){
-    return '<div class="rev-card reveal">'+
-      '<span class="stars">'+TC.stars(r.rating)+'</span>'+
-      '<p>“'+TC.esc(r.text[TC.lang])+'”</p>'+
-      '<div class="rev-who"><span class="rev-av">'+TC.esc(r.name.charAt(0))+'</span>'+
-      '<div><b>'+TC.esc(r.name)+'</b><span>'+TC.esc(r.city)+'</span></div></div></div>';
-  }).join('');
+  /* ---------------- helpers ---------------- */
+  function hash(s) {
+    var h = 0, i;
+    s = String(s || '');
+    for (i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) >>> 0; }
+    return h;
+  }
+  function pick(o, lang) {
+    if (!o) return '';
+    if (typeof o === 'string') return o;
+    return o[lang] || o.bn || o.en || '';
+  }
+  function safeImg(u) {
+    return (typeof u === 'string' && /^(https?:|data:|images\/)/.test(u)) ? u : PLACEHOLDER;
+  }
 
-  /* hero slider */
+  /* ---------------- API → সাইটের ফরম্যাট ---------------- */
+  function normalize(p, i) {
+    var name = p.name || {};
+    var desc = p.desc || {};
+    var gallery = (Array.isArray(p.gallery) ? p.gallery : []).filter(Boolean);
+    var img = p.img || gallery[0] || '';
+    if (!gallery.length && img) gallery = [img];
+
+    return {
+      id: p.id || p.spid || ('api-' + i),
+      cat: p.cat || 'other',
+      catName: p.catName || null,
+      supplier: p.supplier || 'unknown',
+      supplierName: p.supplierName || p.supplier || 'Supplier',
+      spid: p.spid || p.id || '',
+      name: { bn: name.bn || name.en || 'প্রোডাক্ট', en: name.en || name.bn || 'Product' },
+      desc: { bn: desc.bn || desc.en || '', en: desc.en || desc.bn || '' },
+      price: Number(p.price) || 0,
+      oldPrice: Number(p.oldPrice) || 0,
+      stock: p.stock == null ? 0 : Number(p.stock),
+      rating: Number(p.rating) || 0,
+      reviews: Number(p.reviews) || 0,
+      img: safeImg(img),
+      gallery: gallery.length ? gallery.map(safeImg) : [safeImg(img)],
+      variants: (p.variants && typeof p.variants === 'object') ? p.variants : {},
+      badges: Array.isArray(p.badges) ? p.badges.slice() : [],
+      featured: !!p.featured,
+      trending: !!p.trending,
+      bestseller: !!p.bestseller,
+      isNew: !!p.isNew,
+      specs: Array.isArray(p.specs) ? p.specs : [],
+      sources: Array.isArray(p.sources) ? p.sources : (p.supplier ? [p.supplier] : [])
+    };
+  }
+
+  /* API-তে featured/trending/bestseller/isNew সব false এলে সেকশনগুলো খালি দেখাত।
+     তাই id-ভিত্তিক স্থির (stable) নিয়মে ফ্ল্যাগ বসাই — রিলোড করলেও বদলায় না। */
+  function deriveFlags(list) {
+    var any = list.some(function (p) { return p.featured || p.trending || p.bestseller || p.isNew; });
+    if (any) {
+      list.forEach(function (p) {
+        if (p.isNew && p.badges.indexOf('new') < 0) p.badges.push('new');
+        if (p.trending && p.badges.indexOf('hot') < 0) p.badges.push('hot');
+      });
+      return list;
+    }
+    list.forEach(function (p, i) {
+      p.isNew = i < 8;                                  /* API-র ক্রম = নতুন আগে */
+      p.trending = (hash(p.id) % 3) === 0;
+      p.bestseller = (hash(p.id) % 4) === 0;
+      if (p.isNew) p.badges.push('new');
+      if (p.trending) p.badges.push('hot');
+    });
+    return list;
+  }
+
+  function normalizeCats(cats, products) {
+    return (cats || []).map(function (c) {
+      var n = c.name || {};
+      return {
+        id: c.id,
+        name: { bn: n.bn || n.en || c.id, en: n.en || n.bn || c.id },
+        img: safeImg(c.img),
+        count: typeof c.count === 'number' ? c.count : products.filter(function (p) { return p.cat === c.id; }).length
+      };
+    });
+  }
+
+  /* ---------------- রেন্ডার ---------------- */
+  function renderCats() {
+    var cg = TC.byId('cat-grid');
+    if (!cg) return;
+    var cats = state.cats.length ? state.cats : (D.categories || []);
+    if (!cats.length) { cg.innerHTML = ''; return; }
+    cg.innerHTML = cats.map(function (c) {
+      var on = state.activeCat === c.id ? ' active' : '';
+      return '<a class="cat-card reveal' + on + '" href="shop.html?cat=' + encodeURIComponent(c.id) + '" data-cat="' + TC.esc(c.id) + '">' +
+        '<img src="' + safeImg(c.img) + '" alt="' + TC.esc(pick(c.name, TC.lang)) + '" loading="lazy" width="600" height="450" onerror="this.src=\'' + PLACEHOLDER + '\'">' +
+        '<div class="cat-body"><b>' + TC.esc(pick(c.name, TC.lang)) + '</b><span>' + c.count + ' products</span></div></a>';
+    }).join('');
+    TC.initReveal();
+  }
+
+  function renderProducts() {
+    var P = state.products;
+    var newTitle = TC.byId('sec-new-title');
+    var newSub = TC.byId('sec-new-sub');
+    var newMore = TC.byId('sec-new-more');
+
+    if (state.activeCat) {
+      var cat = state.cats.filter(function (c) { return c.id === state.activeCat; })[0];
+      var catLabel = cat ? pick(cat.name, TC.lang) : state.activeCat;
+      var filtered = P.filter(function (p) { return p.cat === state.activeCat; });
+      if (newTitle) newTitle.textContent = catLabel;
+      if (newSub) newSub.textContent = filtered.length + ' টি প্রোডাক্ট · ' + catLabel;
+      if (newMore) {
+        newMore.innerHTML = '<span>সব ক্যাটাগরি</span> →';
+        newMore.setAttribute('href', '#sec-new');
+        newMore.setAttribute('data-reset', '1');
+      }
+      TC.renderGrid(TC.byId('grid-new'), filtered.slice(0, 8));
+    } else {
+      if (newTitle) newTitle.textContent = TC.t('sec.new');
+      if (newSub) newSub.textContent = TC.t('sec.new.sub');
+      if (newMore) {
+        newMore.innerHTML = '<span>' + TC.t('btn.viewAll') + '</span> →';
+        newMore.setAttribute('href', 'shop.html?sort=new');
+        newMore.removeAttribute('data-reset');
+      }
+      TC.renderGrid(TC.byId('grid-new'), P.filter(function (p) { return p.isNew; }).slice(0, 4));
+    }
+
+    TC.renderGrid(TC.byId('grid-trending'), P.filter(function (p) { return p.trending; }).slice(0, 4));
+    TC.renderGrid(TC.byId('grid-best'), P.filter(function (p) { return p.bestseller; }).slice(0, 4));
+
+    /* ফ্ল্যাশ সেল: সত্যিকারের ছাড় (oldPrice > price) থাকলেই দেখাই — নকল ছাড় দেখাই না */
+    var flash = P.filter(function (p) { return TC.discount(p) >= 25; }).slice(0, 4);
+    var flashSec = TC.byId('sec-flash');
+    if (flash.length) {
+      if (flashSec) flashSec.style.display = '';
+      TC.renderGrid(TC.byId('grid-flash'), flash);
+    } else {
+      if (flashSec) flashSec.style.display = 'none';
+      var fg = TC.byId('grid-flash');
+      if (fg) fg.innerHTML = '';
+    }
+  }
+
+  function renderReviews() {
+    var host = TC.byId('rev-grid');
+    if (!host) return;
+    host.innerHTML = (D.reviews || []).map(function (r) {
+      return '<div class="rev-card reveal">' +
+        '<span class="stars">' + TC.stars(r.rating) + '</span>' +
+        '<p>“' + TC.esc(pick(r.text, TC.lang)) + '”</p>' +
+        '<div class="rev-who"><span class="rev-av">' + TC.esc(String(r.name || '?').charAt(0)) + '</span>' +
+        '<div><b>' + TC.esc(r.name) + '</b><span>' + TC.esc(r.city) + '</span></div></div></div>';
+    }).join('');
+    TC.initReveal();
+  }
+
+  function renderAll() {
+    renderCats();
+    renderProducts();
+    renderReviews();
+  }
+
+  /* ---------------- লোডিং / error বার ---------------- */
+  function setStatus(kind, html) {
+    var host = TC.byId('tc-api-status');
+    if (!host) return;
+    if (!kind) { host.innerHTML = ''; return; }
+    host.innerHTML = '<div class="tc-status ' + kind + '"><span class="dot"></span><span>' + html + '</span></div>';
+    var btn = host.querySelector('.tc-btn');
+    if (btn) btn.addEventListener('click', function () { load(true); });
+  }
+
+  function skeleton(n) {
+    var one = '<article class="prod-card skel"><div class="sk sk-media"></div>' +
+      '<div class="prod-body"><div class="sk sk-line" style="width:45%"></div>' +
+      '<div class="sk sk-line" style="width:88%"></div>' +
+      '<div class="sk sk-line" style="width:60%"></div></div></article>';
+    return new Array(n + 1).join(one);
+  }
+
+  function showSkeleton() {
+    ['grid-new', 'grid-trending', 'grid-best'].forEach(function (id) {
+      var el = TC.byId(id);
+      if (el) el.innerHTML = skeleton(4);
+    });
+  }
+
+  /* ---------------- API কল ---------------- */
+  function getJSON(url) {
+    return fetch(url, { headers: { 'Accept': 'application/json' }, cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      });
+  }
+
+  function load(force) {
+    if (state.loading) return;
+    state.loading = true;
+    state.error = null;
+
+    if (!state.products.length) showSkeleton();
+    setStatus('', '');
+
+    var url = API + '/api/products' + (force ? '?refresh=1' : '');
+
+    getJSON(url).then(function (data) {
+      var raw = (data && data.products) || [];
+      if (!raw.length) throw new Error('empty');
+
+      var list = deriveFlags(raw.map(normalize));
+      state.products = list;
+      state.partial = !!data.partial;
+      state.sources = data.sources || [];
+      state.live = true;
+
+      /* সাইটের বাকি সব ফাংশন (TC.product, TC.catName, TC.supplierName) TC_DATA পড়ে —
+         তাই TC_DATA-ও আপডেট করে দিই, যাতে কার্ট/ডিটেইল পেজেও আসল ডেটা মেলে। */
+      D.products = list;
+      D.categories = normalizeCats(data.categories, list);
+      state.cats = D.categories;
+      D.suppliers = D.suppliers || {};
+      state.sources.forEach(function (s) {
+        if (s && s.id) D.suppliers[s.id] = { name: s.label || s.id, site: '' };
+      });
+      list.forEach(function (p) {
+        if (p.supplier && !D.suppliers[p.supplier]) D.suppliers[p.supplier] = { name: p.supplierName, site: '' };
+      });
+
+      renderAll();
+
+      var failed = state.sources.filter(function (s) { return s && s.ok === false; });
+      if (state.partial && failed.length) {
+        setStatus('warn', '<b>' + list.length + ' টি প্রোডাক্ট লোড হয়েছে</b> · ' +
+          failed.map(function (s) { return TC.esc(s.label || s.id) + ' এখন পাওয়া যাচ্ছে না'; }).join(', ') +
+          ' — বাকি সোর্সের ডেটা দেখানো হচ্ছে।');
+      } else {
+        setStatus('', '<b>' + list.length + ' টি প্রোডাক্ট</b> লাইভ লোড হয়েছে · ' +
+          (state.sources.length ? state.sources.map(function (s) { return TC.esc(s.label || s.id); }).join(' + ') : 'API'));
+      }
+    }).catch(function (err) {
+      state.error = err;
+      /* লোকাল data.js-এর ডেটা দিয়ে পেজ চালু রাখি */
+      if (!state.products.length) {
+        state.products = (D.products || []).map(function (p, i) { return normalize(p, i); });
+        state.cats = D.categories || [];
+        renderAll();
+      }
+      setStatus('err', '<b>লাইভ প্রোডাক্ট লোড হয়নি</b> (' + TC.esc(err.message) + ') — ' +
+        'লোকাল ডেটা দেখানো হচ্ছে। ইন্টারনেট বা API ঠিক থাকলে আবার চেষ্টা করুন।' +
+        '<button class="tc-btn" type="button">আবার চেষ্টা</button>');
+    }).then(function () {
+      state.loading = false;
+    });
+  }
+
+  /* ---------------- ক্যাটাগরি ফিল্টার (API-র cat ফিল্ড) ---------------- */
+  document.addEventListener('click', function (e) {
+    var card = e.target.closest('[data-cat]');
+    if (card) {
+      e.preventDefault();
+      var id = card.getAttribute('data-cat');
+      state.activeCat = (state.activeCat === id) ? null : id;
+      renderCats();
+      renderProducts();
+      var sec = TC.byId('sec-new');
+      if (sec && sec.scrollIntoView) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    var reset = e.target.closest('[data-reset]');
+    if (reset) {
+      e.preventDefault();
+      state.activeCat = null;
+      renderCats();
+      renderProducts();
+    }
+  });
+
+  /* ---------------- হিরো স্লাইডার ---------------- */
   var slides = document.querySelectorAll('.hero-slide');
   var dots = TC.byId('hero-dots');
   var idx = 0, timer;
-  dots.innerHTML = Array.prototype.map.call(slides, function(_,i){
-    return '<button'+(i===0?' class="active"':'')+' onclick="TC.heroTo('+i+')" aria-label="Slide '+(i+1)+'"></button>';
-  }).join('');
-  TC.heroTo = function(i){
-    idx = (i+slides.length)%slides.length;
-    slides.forEach(function(s,n){ s.classList.toggle('active', n===idx); });
-    dots.querySelectorAll('button').forEach(function(b,n){ b.classList.toggle('active', n===idx); });
-    clearInterval(timer); timer = setInterval(function(){ TC.heroGo(1); }, 6000);
+  if (dots && slides.length) {
+    dots.innerHTML = Array.prototype.map.call(slides, function (_, i) {
+      return '<button' + (i === 0 ? ' class="active"' : '') + ' onclick="TC.heroTo(' + i + ')" aria-label="Slide ' + (i + 1) + '"></button>';
+    }).join('');
+  }
+  TC.heroTo = function (i) {
+    if (!slides.length) return;
+    idx = (i + slides.length) % slides.length;
+    slides.forEach(function (s, n) { s.classList.toggle('active', n === idx); });
+    if (dots) dots.querySelectorAll('button').forEach(function (b, n) { b.classList.toggle('active', n === idx); });
+    clearInterval(timer); timer = setInterval(function () { TC.heroGo(1); }, 6000);
   };
-  TC.heroGo = function(d){ TC.heroTo(idx+d); };
-  timer = setInterval(function(){ TC.heroGo(1); }, 6000);
+  TC.heroGo = function (d) { TC.heroTo(idx + d); };
+  if (slides.length) timer = setInterval(function () { TC.heroGo(1); }, 6000);
 
-  /* countdown — resets daily */
-  function tick(){
+  /* ---------------- কাউন্টডাউন — প্রতিদিন রিসেট ---------------- */
+  function tick() {
     var now = new Date();
-    var end = new Date(now); end.setHours(23,59,59,999);
-    var diff = Math.max(0, end-now);
-    var h = Math.floor(diff/3.6e6), m = Math.floor(diff%3.6e6/6e4), s = Math.floor(diff%6e4/1000);
-    var pad = function(n){ return String(n).padStart(2,'0'); };
-    TC.byId('cd-h').textContent = pad(h);
-    TC.byId('cd-m').textContent = pad(m);
-    TC.byId('cd-s').textContent = pad(s);
+    var end = new Date(now); end.setHours(23, 59, 59, 999);
+    var diff = Math.max(0, end - now);
+    var h = Math.floor(diff / 3.6e6), m = Math.floor(diff % 3.6e6 / 6e4), s = Math.floor(diff % 6e4 / 1000);
+    var pad = function (n) { return String(n).padStart(2, '0'); };
+    var eh = TC.byId('cd-h'), em = TC.byId('cd-m'), es = TC.byId('cd-s');
+    if (eh) eh.textContent = pad(h);
+    if (em) em.textContent = pad(m);
+    if (es) es.textContent = pad(s);
   }
   tick(); setInterval(tick, 1000);
 
-  TC.subscribe = function(e){
+  TC.subscribe = function (e) {
     e.preventDefault();
     TC.toast(TC.t('toast.subscribed'), 'ok');
     e.target.reset();
     return false;
   };
 
-  /* re-render dynamic text on language change */
-  document.addEventListener('tc:lang', function(){
-    cg.innerHTML = D.categories.map(function(c){
-      return '<a class="cat-card in" href="shop.html?cat='+c.id+'">'+
-        '<img src="'+c.img+'" alt="'+TC.esc(c.name[TC.lang])+'" loading="lazy" width="600" height="450">'+
-        '<div class="cat-body"><b>'+TC.esc(c.name[TC.lang])+'</b><span>'+c.count+' products</span></div></a>';
-    }).join('');
-    TC.renderGrid(TC.byId('grid-new'), P.filter(function(p){return p.isNew;}).slice(0,4));
-    TC.renderGrid(TC.byId('grid-trending'), P.filter(function(p){return p.trending;}).slice(0,4));
-    TC.renderGrid(TC.byId('grid-best'), P.filter(function(p){return p.bestseller;}).slice(0,4));
-    TC.renderGrid(TC.byId('grid-flash'), P.filter(function(p){return TC.discount(p)>=25;}).slice(0,4));
-    TC.byId('rev-grid').innerHTML = D.reviews.map(function(r){
-      return '<div class="rev-card in"><span class="stars">'+TC.stars(r.rating)+'</span>'+
-        '<p>“'+TC.esc(r.text[TC.lang])+'”</p>'+
-        '<div class="rev-who"><span class="rev-av">'+TC.esc(r.name.charAt(0))+'</span>'+
-        '<div><b>'+TC.esc(r.name)+'</b><span>'+TC.esc(r.city)+'</span></div></div></div>';
-    }).join('');
+  /* ---------------- ভাষা বদলালে আবার রেন্ডার ---------------- */
+  document.addEventListener('tc:lang', function () {
+    renderAll();
   });
 
+  /* ---------------- শুরু ---------------- */
   TC.boot('home');
+
+  /* প্রথমে লোকাল ডেটা দিয়ে সাথে সাথে রেন্ডার (পেজ কখনো ফাঁকা থাকে না) */
+  state.products = (D.products || []).map(function (p, i) { return normalize(p, i); });
+  state.cats = D.categories || [];
+  renderAll();
+
+  /* তারপর আসল API ডেটা */
+  load(false);
 })();
 </script>
 </body>
