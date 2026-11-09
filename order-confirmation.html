@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order Confirmed — Trendy Choice</title>
+<meta name="description" content="আপনার Trendy Choice অর্ডার সফলভাবে তৈরি হয়েছে। অর্ডার আইডি ও ট্র্যাকিং তথ্য দেখুন।">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="order-confirmation.html">
+<link rel="stylesheet" href="styles.css?v=5">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%237c5cff'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>TC</text></svg>">
+</head>
+<body>
+<div id="tc-header"></div>
+
+<main>
+  <div class="wrap" id="ok-root"></div>
+</main>
+
+<div id="tc-footer"></div>
+
+<script src="data.js"></script>
+<script src="app.js?v=3"></script>
+<script>
+(function(){
+  var orderId = TC.qs('order') || '';
+  var order = null;
+  try {
+    var hist = JSON.parse(localStorage.getItem('tc-orders')) || [];
+    order = hist.filter(function(o){ return o.id === orderId; })[0] || hist[0] || null;
+  } catch(e){}
+
+  function render(){
+    var root = TC.byId('ok-root');
+    var oid = order ? order.id : (orderId || 'TC-000000');
+
+    var itemsHtml = '';
+    if (order && order.items){
+      itemsHtml = '<div class="co-card" style="max-width:640px;margin:0 auto 18px;text-align:left">'+
+        '<h3>'+TC.t('cart.summary')+'</h3>'+
+        order.items.map(function(it){
+          return '<div class="co-item" style="margin-bottom:10px"><div class="n">'+TC.esc(it.name)+
+            '<span>'+TC.esc(it.supplier)+' · ×'+it.qty+'</span></div><div class="p">'+TC.money(it.price*it.qty)+'</div></div>';
+        }).join('')+
+        '<div class="sum-row" style="border-top:1px solid var(--line);margin-top:10px;padding-top:12px"><span>'+TC.t('cart.subtotal')+'</span><b>'+TC.money(order.subtotal)+'</b></div>'+
+        (order.discount>0?'<div class="sum-row" style="color:var(--success)"><span>'+TC.t('cart.discount')+'</span><b>−'+TC.money(order.discount)+'</b></div>':'')+
+        '<div class="sum-row"><span>'+TC.t('cart.delivery')+'</span><b>'+(order.delivery===0?TC.t('cart.free'):TC.money(order.delivery))+'</b></div>'+
+        '<div class="sum-row total"><span>'+TC.t('cart.total')+'</span><span>'+TC.money(order.total)+'</span></div>'+
+        '<div style="margin-top:16px;font-size:13px;color:var(--text-2);line-height:1.7">'+
+          '<b>'+TC.esc(order.name)+'</b> · '+TC.esc(order.phone)+'<br>'+
+          TC.esc(order.address)+', '+TC.esc(order.upazila)+', '+TC.esc(order.district)+', '+TC.esc(order.division)+'<br>'+
+          'পেমেন্ট: <b>'+TC.esc(order.payment.toUpperCase())+'</b>'+
+        '</div>'+
+      '</div>';
+    }
+
+    root.innerHTML = '<div class="confirm-hero">'+
+      '<div class="confirm-icon"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></div>'+
+      '<h1>'+TC.t('ok.title')+'</h1>'+
+      '<p>'+TC.t('ok.sub')+'</p>'+
+      '<div class="order-id-box"><span>'+TC.t('ok.id')+'</span><b>'+TC.esc(oid)+'</b></div>'+
+    '</div>'+
+    '<div style="max-width:640px;margin:0 auto 30px">'+
+      '<div class="track-steps">'+
+        '<div class="tstep done"><div class="dot">✓</div><b>Pending</b><span>অর্ডার গৃহীত</span></div>'+
+        '<div class="tstep"><div class="dot">2</div><b>Confirmed</b><span>নিশ্চিত</span></div>'+
+        '<div class="tstep"><div class="dot">3</div><b>Processing</b><span>প্রস্তুত হচ্ছে</span></div>'+
+        '<div class="tstep"><div class="dot">4</div><b>Shipped</b><span>পাঠানো হয়েছে</span></div>'+
+        '<div class="tstep"><div class="dot">5</div><b>Delivered</b><span>ডেলিভারড</span></div>'+
+      '</div>'+
+    '</div>'+
+    itemsHtml+
+    '<div style="text-align:center;padding-bottom:60px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'+
+      '<a class="btn btn-primary" href="shop.html">'+TC.t('ok.continue')+'</a>'+
+      '<a class="btn btn-ghost" href="account.html#orders">'+TC.t('ok.track')+'</a>'+
+    '</div>';
+  }
+
+  document.addEventListener('tc:lang', render);
+  TC.boot('');
+  render();
+})();
+</script>
+</body>
+</html>

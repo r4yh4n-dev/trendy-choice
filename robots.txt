@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /account.html
+Disallow: /checkout.html
+Disallow: /cart.html
 
-Sitemap: https://REPLACE-WITH-MY-SITE/sitemap.xml
+Sitemap: sitemap.xml

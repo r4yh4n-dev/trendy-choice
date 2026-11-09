@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Trendy Choice</title>
+<meta name="description" content="Trendy Choice চেকআউট — ডেলিভারি তথ্য দিন, পেমেন্ট পদ্ধতি বেছে নিন এবং অর্ডার নিশ্চিত করুন। ক্যাশ অন ডেলিভারি, বিকাশ, নগদ, রকেট।">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="checkout.html">
+<link rel="stylesheet" href="styles.css?v=5">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%237c5cff'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>TC</text></svg>">
+</head>
+<body>
+<div id="tc-header"></div>
+
+<main>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html" data-i18n="nav.home">হোম</a><span>/</span><a href="cart.html" data-i18n="cart.title">শপিং কার্ট</a><span>/</span><span data-i18n="co.title">চেকআউট</span></div>
+    <div class="page-head"><h1 data-i18n="co.title">চেকআউট</h1></div>
+  </div>
+  <div class="wrap" id="co-root"></div>
+</main>
+
+<div id="tc-footer"></div>
+
+<script src="data.js"></script>
+<script src="locations.js"></script>
+<script src="app.js?v=3"></script>
+<script>
+(function(){
+  var D = window.TC_DATA, L = window.TC_LOCATIONS;
+  var pay = 'cod';
+
+  function render(){
+    var items = TC.cart.get();
+    var root = TC.byId('co-root');
+
+    if (!items.length){
+      root.innerHTML = '<div class="empty" style="margin:26px 0 60px">'+
+        '<h3>'+TC.t('cart.empty')+'</h3><p>'+TC.t('cart.emptySub')+'</p>'+
+        '<a class="btn btn-primary" href="shop.html">'+TC.t('btn.continue')+'</a></div>';
+      return;
+    }
+
+    var sub = TC.cart.subtotal();
+    var disc = TC.coupon.discount(sub);
+    var deliv = TC.deliveryCharge(sub, '');
+    var total = Math.max(0, sub - disc + deliv);
+
+    var coItems = items.map(function(it){
+      var p = TC.product(it.id); if (!p) return '';
+      return '<div class="co-item"><img src="'+p.img+'" alt="'+TC.esc(p.name[TC.lang])+'" width="56" height="56">'+
+        '<div class="n">'+TC.esc(p.name[TC.lang])+'<span>'+TC.esc(TC.supplierName(p.supplier))+' · ×'+it.qty+'</span></div>'+
+        '<div class="p">'+TC.money(p.price*it.qty)+'</div></div>';
+    }).join('');
+
+    var divOpts = '<option value="">'+TC.t('co.select')+'</option>' + Object.keys(L).map(function(k){
+      return '<option value="'+k+'">'+TC.esc(L[k].name[TC.lang])+'</option>';
+    }).join('');
+
+    root.innerHTML = '<div class="co-layout">'+
+      '<form id="co-form" novalidate>'+
+        '<div class="co-card">'+
+          '<h3><span class="num">1</span>'+TC.t('co.info')+'</h3>'+
+          '<div class="form-grid">'+
+            '<div class="field"><label>'+TC.t('co.name')+' <span class="req">*</span></label>'+
+              '<input name="name" required autocomplete="name"><span class="msg">'+TC.t('co.required')+'</span></div>'+
+            '<div class="field"><label>'+TC.t('co.phone')+' <span class="req">*</span></label>'+
+              '<input name="phone" required inputmode="numeric" placeholder="01XXXXXXXXX" autocomplete="tel"><span class="msg">'+TC.t('co.phoneErr')+'</span></div>'+
+            '<div class="field full"><label>'+TC.t('co.email')+'</label>'+
+              '<input name="email" type="email" autocomplete="email"></div>'+
+            '<div class="field"><label>'+TC.t('co.division')+' <span class="req">*</span></label>'+
+              '<select name="division" required>'+divOpts+'</select><span class="msg">'+TC.t('co.required')+'</span></div>'+
+            '<div class="field"><label>'+TC.t('co.district')+' <span class="req">*</span></label>'+
+              '<select name="district" required><option value="">'+TC.t('co.select')+'</option></select><span class="msg">'+TC.t('co.required')+'</span></div>'+
+            '<div class="field"><label>'+TC.t('co.upazila')+' <span class="req">*</span></label>'+
+              '<select name="upazila" required><option value="">'+TC.t('co.select')+'</option></select><span class="msg">'+TC.t('co.required')+'</span></div>'+
+            '<div class="field full"><label>'+TC.t('co.address')+' <span class="req">*</span></label>'+
+              '<textarea name="address" required placeholder="বাসা/রোড/এলাকা"></textarea><span class="msg">'+TC.t('co.required')+'</span></div>'+
+            '<div class="field full"><label>'+TC.t('co.notes')+'</label>'+
+              '<textarea name="notes" placeholder="ডেলিভারি সম্পর্কিত নির্দেশনা..."></textarea></div>'+
+          '</div>'+
+        '</div>'+
+
+        '<div class="co-card">'+
+          '<h3><span class="num">2</span>'+TC.t('co.payment')+'</h3>'+
+          '<div class="pay-opts" id="pay-opts">'+
+            payOpt('cod', TC.t('co.cod'), TC.t('co.codSub'), true)+
+            payOpt('bkash', TC.t('co.bkash'), TC.t('co.bkashSub'))+
+            payOpt('nagad', TC.t('co.nagad'), TC.t('co.nagadSub'))+
+            payOpt('rocket', TC.t('co.rocket'), TC.t('co.rocketSub'))+
+            payOpt('online', TC.t('co.online'), TC.t('co.onlineSub'))+
+          '</div>'+
+          '<div class="pay-note" id="pay-note"></div>'+
+        '</div>'+
+
+        '<label class="filter-opt" style="margin-bottom:16px"><input type="checkbox" id="co-agree" checked> <span>'+TC.t('co.agree')+'</span></label>'+
+        '<button class="btn btn-primary btn-block" type="submit" style="height:52px;font-size:16px">'+TC.t('co.place')+'</button>'+
+      '</form>'+
+
+      '<aside class="summary">'+
+        '<h3>'+TC.t('cart.summary')+'</h3>'+
+        '<div class="co-items">'+coItems+'</div>'+
+        '<div class="sum-row"><span>'+TC.t('cart.subtotal')+'</span><b>'+TC.money(sub)+'</b></div>'+
+        (disc>0?'<div class="sum-row" style="color:var(--success)"><span>'+TC.t('cart.discount')+'</span><b>−'+TC.money(disc)+'</b></div>':'')+
+        '<div class="sum-row"><span>'+TC.t('cart.delivery')+'</span><b id="co-deliv">'+(deliv===0?TC.t('cart.free'):TC.money(deliv))+'</b></div>'+
+        '<div class="sum-row total"><span>'+TC.t('cart.total')+'</span><span id="co-total">'+TC.money(total)+'</span></div>'+
+        '<p style="font-size:12px;color:var(--text-3);margin:16px 0 0;line-height:1.6">চূড়ান্ত দাম ও স্টক সার্ভার-সাইডে যাচাই করা হয়। অর্ডার নিশ্চিত করার পর একটি ইউনিক অর্ডার আইডি তৈরি হবে।</p>'+
+      '</aside>'+
+    '</div>';
+
+    wire();
+  }
+
+  function payOpt(v, t, s, checked){
+    return '<label class="pay-opt'+(checked?' active':'')+'" data-pay="'+v+'">'+
+      '<input type="radio" name="pay" value="'+v+'"'+(checked?' checked':'')+'>'+
+      '<div class="pi"><b>'+t+'</b><span>'+s+'</span></div></label>';
+  }
+
+  function wire(){
+    var form = TC.byId('co-form');
+    var divSel = form.division, distSel = form.district, upSel = form.upazila;
+
+    divSel.addEventListener('change', function(){
+      var d = L[divSel.value];
+      distSel.innerHTML = '<option value="">'+TC.t('co.select')+'</option>' + (d ? Object.keys(d.districts).map(function(k){
+        return '<option value="'+k+'">'+TC.esc(d.districts[k].name[TC.lang])+'</option>';
+      }).join('') : '');
+      upSel.innerHTML = '<option value="">'+TC.t('co.select')+'</option>';
+      updateDeliv();
+    });
+    distSel.addEventListener('change', function(){
+      var d = L[divSel.value];
+      var dist = d && d.districts[distSel.value];
+      upSel.innerHTML = '<option value="">'+TC.t('co.select')+'</option>' + (dist ? dist.upazilas.map(function(u){
+        return '<option value="'+TC.esc(u)+'">'+TC.esc(u)+'</option>';
+      }).join('') : '');
+      updateDeliv();
+    });
+
+    /* payment selection */
+    TC.byId('pay-opts').querySelectorAll('.pay-opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        pay = o.getAttribute('data-pay');
+        TC.byId('pay-opts').querySelectorAll('.pay-opt').forEach(function(x){ x.classList.remove('active'); });
+        o.classList.add('active');
+        o.querySelector('input').checked = true;
+        showPayNote();
+      });
+    });
+    showPayNote();
+
+    form.addEventListener('submit', submit);
+  }
+
+  function updateDeliv(){
+    var sub = TC.cart.subtotal();
+    var div = TC.byId('co-form').division.value;
+    var deliv = TC.deliveryCharge(sub, div);
+    var disc = TC.coupon.discount(sub);
+    var total = Math.max(0, sub - disc + deliv);
+    var de = TC.byId('co-deliv'), te = TC.byId('co-total');
+    if (de) de.textContent = deliv===0 ? TC.t('cart.free') : TC.money(deliv);
+    if (te) te.textContent = TC.money(total);
+  }
+
+  function showPayNote(){
+    var note = TC.byId('pay-note'); if (!note) return;
+    var msgs = {
+      bkash: 'বিকাশ: <b>01826459122</b> (Personal) নম্বরে Send Money করুন। পেমেন্টের পর ট্রানজেকশন আইডি অর্ডার নোটে লিখুন। অ্যাডমিন যাচাই করে অর্ডার কনফার্ম করবেন।',
+      nagad: 'নগদ: <b>01826459122</b> নম্বরে Send Money করুন। পেমেন্টের পর ট্রানজেকশন আইডি অর্ডার নোটে লিখুন। অ্যাডমিন যাচাই করে অর্ডার কনফার্ম করবেন।',
+      rocket: 'রকেট: <b>01826459122-1</b> নম্বরে Send Money করুন। পেমেন্টের পর ট্রানজেকশন আইডি অর্ডার নোটে লিখুন। অ্যাডমিন যাচাই করে অর্ডার কনফার্ম করবেন।',
+      online: 'SSLCommerz গেটওয়ের মাধ্যমে কার্ড/নেট ব্যাংকিং পেমেন্ট। মার্চেন্ট কনফিগারেশন সম্পন্ন হলে গেটওয়ে চালু হবে।'
+    };
+    if (msgs[pay]){ note.className='pay-note show'; note.innerHTML = msgs[pay]; }
+    else { note.className='pay-note'; note.innerHTML=''; }
+  }
+
+  function submit(e){
+    e.preventDefault();
+    var form = TC.byId('co-form');
+    var ok = true;
+
+    /* validate required fields */
+    ['name','phone','division','district','upazila','address'].forEach(function(n){
+      var el = form[n], field = el.closest('.field');
+      var bad = !el.value.trim();
+      if (n === 'phone') bad = !/^01[3-9]\d{8}$/.test(el.value.trim());
+      field.classList.toggle('invalid', bad);
+      el.classList.toggle('err', bad);
+      if (bad) ok = false;
+    });
+    if (!TC.byId('co-agree').checked){ TC.toast('অর্ডার পলিসিতে সম্মতি দিন','err'); ok = false; }
+    if (!ok){ TC.toast('সব প্রয়োজনীয় তথ্য সঠিকভাবে পূরণ করুন','err'); return; }
+
+    /* In production: POST to Cloudflare Worker which re-validates prices,
+       stock and coupon server-side, then creates the order and returns the ID. */
+    var orderId = 'TC-' + Date.now().toString().slice(-6) + Math.floor(Math.random()*90+10);
+    var sub = TC.cart.subtotal();
+    var disc = TC.coupon.discount(sub);
+    var div = form.division.value;
+    var deliv = TC.deliveryCharge(sub, div);
+    var total = Math.max(0, sub - disc + deliv);
+
+    var order = {
+      id: orderId,
+      date: new Date().toISOString(),
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      division: L[div] ? L[div].name[TC.lang] : div,
+      district: form.district.options[form.district.selectedIndex].text,
+      upazila: form.upazila.value,
+      address: form.address.value.trim(),
+      notes: form.notes.value.trim(),
+      payment: pay,
+      items: TC.cart.get().map(function(it){
+        var p = TC.product(it.id);
+        return { id: it.id, name: p.name[TC.lang], qty: it.qty, price: p.price, supplier: TC.supplierName(p.supplier), variant: it.variant };
+      }),
+      subtotal: sub, discount: disc, delivery: deliv, total: total
+    };
+
+    try {
+      var hist = JSON.parse(localStorage.getItem('tc-orders')) || [];
+      hist.unshift(order);
+      localStorage.setItem('tc-orders', JSON.stringify(hist));
+    } catch (err) {}
+
+    TC.cart.clear();
+    TC.coupon.clear();
+    TC.toast(TC.t('toast.orderOk'), 'ok');
+    setTimeout(function(){ location.href = 'order-confirmation.html?order=' + orderId; }, 500);
+  }
+
+  document.addEventListener('tc:lang', render);
+  TC.boot('cart');
+  render();
+})();
+</script>
+</body>
+</html>

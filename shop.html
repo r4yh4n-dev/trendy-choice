@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop All Products — Trendy Choice</title>
+<meta name="description" content="Trendy Choice-এ সব প্রোডাক্ট ব্রাউজ করুন — ফ্যাশন, গ্যাজেট, লাইফস্টাইল, হোম এসেনশিয়ালস, অ্যাকসেসরিজ ও বিউটি। ক্যাটাগরি ও দাম অনুযায়ী ফিল্টার করুন।">
+<meta property="og:title" content="Shop All Products — Trendy Choice">
+<meta property="og:description" content="Browse all products at Trendy Choice — filter by category and price.">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="shop.html">
+<link rel="stylesheet" href="styles.css?v=5">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%237c5cff'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>TC</text></svg>">
+</head>
+<body>
+<div id="tc-header"></div>
+
+<main>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html" data-i18n="nav.home">হোম</a><span>/</span><span id="crumb-cat" data-i18n="shop.title">সব প্রোডাক্ট</span></div>
+    <div class="page-head">
+      <h1 id="shop-title" data-i18n="shop.title">সব প্রোডাক্ট</h1>
+      <p id="shop-sub"></p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="shop-layout">
+      <!-- FILTERS -->
+      <aside class="filters" id="filters">
+        <div class="filter-block">
+          <h4 data-i18n="shop.category">ক্যাটাগরি</h4>
+          <div id="f-cats"></div>
+        </div>
+        <div class="filter-block">
+          <h4 data-i18n="shop.price">দামের সীমা</h4>
+          <div class="price-row">
+            <input type="number" id="f-min" placeholder="Min" min="0" aria-label="Min price">
+            <span style="color:var(--text-3)">—</span>
+            <input type="number" id="f-max" placeholder="Max" min="0" aria-label="Max price">
+          </div>
+        </div>
+        <div class="filter-block">
+          <h4 data-i18n="shop.availability">স্টক</h4>
+          <label class="filter-opt"><input type="checkbox" id="f-instock"> <span data-i18n="shop.inStock">স্টকে আছে</span></label>
+          <label class="filter-opt"><input type="checkbox" id="f-offers"> <span data-i18n="nav.offers">অফার</span></label>
+        </div>
+        <button class="btn btn-ghost btn-block btn-sm" onclick="TC.clearFilters()" data-i18n="shop.clear">ফিল্টার মুছুন</button>
+      </aside>
+
+      <!-- RESULTS -->
+      <div>
+        <div class="chips" id="chips"></div>
+        <div class="shop-bar">
+          <span class="count"><b id="res-count">0</b> <span data-i18n="shop.results">প্রোডাক্ট পাওয়া গেছে</span></span>
+          <div class="shop-bar-right">
+            <button class="btn btn-ghost btn-sm filter-toggle" onclick="TC.toggleFilters()" aria-expanded="false" aria-controls="filters">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+              <span data-i18n="shop.filters">ফিল্টার</span>
+            </button>
+            <select id="f-sort" aria-label="Sort">
+              <option value="new" data-i18n="shop.sortNew">নতুন আগে</option>
+              <option value="low" data-i18n="shop.sortLow">দাম: কম থেকে বেশি</option>
+              <option value="high" data-i18n="shop.sortHigh">দাম: বেশি থেকে কম</option>
+              <option value="pop" data-i18n="shop.sortPop">জনপ্রিয়তা</option>
+            </select>
+          </div>
+        </div>
+        <div class="prod-grid cols-3" id="grid"></div>
+        <div class="pager" id="pager"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="tc-footer"></div>
+
+<script src="data.js"></script>
+<script src="app.js?v=3"></script>
+<script>
+(function(){
+  var D = window.TC_DATA, P = D.products;
+  var PER = 9, page = 1;
+  var state = { cat: TC.qs('cat') || '', q: TC.qs('q') || '', min: null, max: null, instock: false, offers: TC.qs('offers')==='1', sort: TC.qs('sort') || 'new' };
+
+  /* category filter list */
+  function renderCats(){
+    var el = TC.byId('f-cats');
+    var all = '<label class="filter-opt"><input type="radio" name="cat" value=""'+(state.cat===''?' checked':'')+'> <span>'+TC.t('shop.title')+'</span></label>';
+    el.innerHTML = all + D.categories.map(function(c){
+      return '<label class="filter-opt"><input type="radio" name="cat" value="'+c.id+'"'+(state.cat===c.id?' checked':'')+'> <span>'+TC.esc(c.name[TC.lang])+'</span></label>';
+    }).join('');
+    el.querySelectorAll('input').forEach(function(r){
+      r.addEventListener('change', function(){ state.cat = r.value; page = 1; render(); });
+    });
+  }
+
+  function filtered(){
+    var list = P.slice();
+    if (state.cat) list = list.filter(function(p){ return p.cat === state.cat; });
+    if (state.q) {
+      var q = state.q.toLowerCase();
+      list = list.filter(function(p){
+        return (p.name.bn+' '+p.name.en+' '+p.id+' '+p.spid).toLowerCase().indexOf(q) > -1;
+      });
+    }
+    if (state.min != null) list = list.filter(function(p){ return p.price >= state.min; });
+    if (state.max != null) list = list.filter(function(p){ return p.price <= state.max; });
+    if (state.instock) list = list.filter(function(p){ return p.stock > 0; });
+    if (state.offers) list = list.filter(function(p){ return TC.discount(p) > 0; });
+    if (state.sort === 'low') list.sort(function(a,b){ return a.price-b.price; });
+    else if (state.sort === 'high') list.sort(function(a,b){ return b.price-a.price; });
+    else if (state.sort === 'pop') list.sort(function(a,b){ return b.reviews-a.reviews; });
+    else list.sort(function(a,b){ return (b.isNew?1:0)-(a.isNew?1:0); });
+    return list;
+  }
+
+  function renderChips(){
+    var el = TC.byId('chips'), out = [];
+    if (state.cat) out.push('<button class="chip active" onclick="TC.setCat(\'\')">'+TC.esc(TC.catName(state.cat))+' ✕</button>');
+    if (state.q) out.push('<button class="chip active" onclick="TC.setQ(\'\')">“'+TC.esc(state.q)+'” ✕</button>');
+    if (state.offers) out.push('<button class="chip active" onclick="TC.setOffers(false)">'+TC.t('nav.offers')+' ✕</button>');
+    if (state.instock) out.push('<button class="chip active" onclick="TC.setStock(false)">'+TC.t('shop.inStock')+' ✕</button>');
+    el.innerHTML = out.join('');
+  }
+
+  function render(){
+    var list = filtered();
+    var pages = Math.max(1, Math.ceil(list.length/PER));
+    if (page > pages) page = pages;
+    var slice = list.slice((page-1)*PER, page*PER);
+    TC.renderGrid(TC.byId('grid'), slice);
+    TC.byId('res-count').textContent = list.length;
+
+    /* title */
+    var t = state.cat ? TC.catName(state.cat) : TC.t('shop.title');
+    TC.byId('shop-title').textContent = t;
+    TC.byId('crumb-cat').textContent = t;
+    TC.byId('shop-sub').textContent = state.q ? ('“'+state.q+'”') : '';
+
+    /* pager */
+    var pg = TC.byId('pager');
+    if (pages <= 1) { pg.innerHTML = ''; }
+    else {
+      var h = '<button '+(page===1?'disabled':'')+' onclick="TC.goPage('+(page-1)+')">‹</button>';
+      for (var i=1;i<=pages;i++) h += '<button class="'+(i===page?'active':'')+'" onclick="TC.goPage('+i+')">'+i+'</button>';
+      h += '<button '+(page===pages?'disabled':'')+' onclick="TC.goPage('+(page+1)+')">›</button>';
+      pg.innerHTML = h;
+    }
+    renderChips();
+  }
+
+  TC.goPage = function(p){ page = p; render(); window.scrollTo({top:0,behavior:'smooth'}); };
+  TC.setCat = function(c){ state.cat = c; page = 1; renderCats(); render(); };
+  TC.setQ = function(q){ state.q = q; page = 1; render(); };
+  TC.setOffers = function(v){ state.offers = v; page = 1; render(); };
+  TC.setStock = function(v){ state.instock = v; TC.byId('f-instock').checked = v; page = 1; render(); };
+  TC.clearFilters = function(){
+    state = { cat:'', q:'', min:null, max:null, instock:false, offers:false, sort:'new' };
+    TC.byId('f-min').value=''; TC.byId('f-max').value=''; TC.byId('f-instock').checked=false;
+    TC.byId('f-sort').value='new'; page=1; renderCats(); render();
+  };
+  TC.toggleFilters = function(){
+    var f = TC.byId('filters'), b = document.querySelector('.filter-toggle');
+    var open = f.classList.toggle('open');
+    if (b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  /* wire controls */
+  TC.byId('f-min').addEventListener('input', function(){ state.min = this.value===''?null:+this.value; page=1; render(); });
+  TC.byId('f-max').addEventListener('input', function(){ state.max = this.value===''?null:+this.value; page=1; render(); });
+  TC.byId('f-instock').addEventListener('change', function(){ state.instock = this.checked; page=1; render(); });
+  TC.byId('f-offers').addEventListener('change', function(){ state.offers = this.checked; page=1; render(); });
+  TC.byId('f-sort').addEventListener('change', function(){ state.sort = this.value; page=1; render(); });
+
+  document.addEventListener('tc:lang', function(){ renderCats(); render(); });
+
+  TC.boot('shop');
+  renderCats();
+  TC.byId('f-sort').value = state.sort;
+  TC.byId('f-offers').checked = state.offers;
+  render();
+})();
+</script>
+</body>
+</html>
