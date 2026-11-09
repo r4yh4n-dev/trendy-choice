@@ -182,31 +182,31 @@
       "inStock": true,
       "variants": [
         {
-          "id": "40452f87-e485-4097-bbe6-85f4de70cb19",
-          "color": "White",
+          "id": "c2560057-ecfe-4c26-8f8d-0b08a52983b6",
+          "color": "Yellow",
           "size": null,
-          "stockQuantity": 39,
+          "stockQuantity": 13,
           "inStock": true
         },
         {
           "id": "3ac9edd3-8480-4aeb-9e6d-10b03f69525f",
           "color": "Red",
           "size": null,
-          "stockQuantity": 23,
+          "stockQuantity": 22,
           "inStock": true
         },
         {
           "id": "19364657-7af2-4e3c-b04a-428ce066251f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 96,
+          "stockQuantity": 82,
           "inStock": true
         },
         {
-          "id": "c2560057-ecfe-4c26-8f8d-0b08a52983b6",
-          "color": "Yellow",
+          "id": "40452f87-e485-4097-bbe6-85f4de70cb19",
+          "color": "White",
           "size": null,
-          "stockQuantity": 19,
+          "stockQuantity": 31,
           "inStock": true
         }
       ]
@@ -331,7 +331,7 @@
           "id": "c6ecb383-1560-4bc8-a9f3-4bdae3ac64e4",
           "color": "White",
           "size": null,
-          "stockQuantity": 45,
+          "stockQuantity": 43,
           "inStock": true
         }
       ]
@@ -716,17 +716,6 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/de153bdfb7f786ceda5e-gff71glitmjxrnxoqst5.webp"
       ],
       "price": 1150,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "bbbacf87-a611-4cd6-9679-b27122548df7",
-      "name": "5 in 1 Gaming Combo Pack",
-      "description": "5-in-1 mobile gaming keyboard and mouse converter kit for smartphone gaming. Includes RGB one-hand keyboard, gaming mouse, phone connection adapter, and phone stand. Designed for smoother mobile gameplay with keyboard-mouse control, colorful RGB lighting, and comfortable wrist support\n\ncontroller -  X8",
-      "images": [
-        "https://cdn.businesskoro.com/legacy-cloudinary/backend/21e3ea2149ab96299671-vywwq6mjycil9ferpdm6.webp"
-      ],
-      "price": 1950,
       "inStock": true,
       "variants": []
     }
