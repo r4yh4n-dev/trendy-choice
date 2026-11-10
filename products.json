@@ -185,28 +185,28 @@
           "id": "3ac9edd3-8480-4aeb-9e6d-10b03f69525f",
           "color": "Red",
           "size": null,
-          "stockQuantity": 22,
+          "stockQuantity": 18,
           "inStock": true
         },
         {
           "id": "19364657-7af2-4e3c-b04a-428ce066251f",
           "color": "Black",
           "size": null,
-          "stockQuantity": 79,
+          "stockQuantity": 63,
           "inStock": true
         },
         {
           "id": "c2560057-ecfe-4c26-8f8d-0b08a52983b6",
           "color": "Yellow",
           "size": null,
-          "stockQuantity": 7,
-          "inStock": true
+          "stockQuantity": 0,
+          "inStock": false
         },
         {
           "id": "40452f87-e485-4097-bbe6-85f4de70cb19",
           "color": "White",
           "size": null,
-          "stockQuantity": 26,
+          "stockQuantity": 16,
           "inStock": true
         }
       ]
@@ -324,7 +324,7 @@
           "id": "e3c93eb8-1d28-4eb0-8411-e5d4379a6862",
           "color": "Pink",
           "size": null,
-          "stockQuantity": 44,
+          "stockQuantity": 43,
           "inStock": true
         },
         {
@@ -424,17 +424,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
-          "color": "Green",
-          "size": null,
-          "stockQuantity": 45,
-          "inStock": true
-        },
-        {
           "id": "1fed097e-75cd-48ae-8d16-99be09077069",
           "color": "Red",
           "size": null,
           "stockQuantity": 41,
+          "inStock": true
+        },
+        {
+          "id": "e23cae4b-70cc-4533-8148-b2a221a40d9f",
+          "color": "Green",
+          "size": null,
+          "stockQuantity": 43,
           "inStock": true
         },
         {
@@ -541,7 +541,7 @@
           "id": "97920fa7-df1b-464e-96dd-2285f8c809b5",
           "color": "Golden",
           "size": null,
-          "stockQuantity": 144,
+          "stockQuantity": 143,
           "inStock": true
         }
       ]
@@ -613,17 +613,6 @@
       "variants": []
     },
     {
-      "id": "ebd20ecb-7135-4f0a-9b59-95c7de8033fa",
-      "name": "140W স্মার্ট ফুল চার্জ সেপারেটর",
-      "description": "কাদের জন্য পারফেক্ট?\nআপনিও কি এদের একজন?\n\n🌙\nযারা রাতে চার্জ দিয়ে ঘুমান\nসকালে ফোন গরম, ব্যাটারি দুর্বল — সব সমস্যা শেষ।\n💼\nঅফিসে চার্জ দিয়ে কাজ করেন\nমিটিং চলাকালীন ফুল হলেই অটো কাট, কোনো ঝামেলা নেই।\n🎮\nগেমার / কন্টেন্ট ক্রিয়েটর\n১৪০W ফাস্ট চার্জ + হিট প্রোটেকশন — পারফরম্যান্স অটুট।\n✈️\nফ্রিকোয়েন্ট ট্রাভেলার\nএয়ারপোর্ট / হোটেলের আনস্টেবল পাওয়ার থেকে সম্পূর্ণ সুরক্ষা।\n👨‍👩‍👧\nপরিবারের সবার ফোনে\nএকটাই সেপারেটর, সবাই ব্যবহার করতে পারে — iPhone, Android, iPad সব।\n🛡️\nযারা ফোন নতুনের মতো রাখতে চান\nব্যাটারি হেলথ ১০০% রাখার একমাত্র সহজ সমাধান।",
-      "images": [
-        "https://cdn.businesskoro.com/legacy-cloudinary/backend/92a06ab1d06eaee8ff21-qtamque9qnfxfntzwvyb.webp"
-      ],
-      "price": 1200,
-      "inStock": true,
-      "variants": []
-    },
-    {
       "id": "d39c1449-7e6d-4966-912f-96d4741d37b2",
       "name": "Dual Horn Transparent Mecha Speaker",
       "description": "1. Compatible with Bluetooth 5.3 connection: Enjoy high quality sound with fast and stable signal transmission up to 10 meters.\n2. Dual speakers: With 10W total power and 360° surround sound, this speaker delivers impressive audio performance, visible bass and clear music reproduction.\n3. Unique transparent Mecha design: The unique design of the portable speaker provides a stunning visual experience with multi-dimensional effects that enhance the overall sound quality.\n4. Long-lasting battery life: The wireless speaker is equipped with 1800mAh lithium battery, which can provide up to 3-4 hours of continuous music playback time on a single charge.\n5. Colorful Phantom Streamer: This speaker looks cool and stylish, with dynamic lights that change with the sound, adding an immersive feel to your listening experience.\n\nParameters:\nProduct name: Bluetooth speaker\nBluetooth version: 5.3\nBluetooth distance: about 10 meters\nBluetooth protocol: A2DP, AVRCP\nFrequency response: 60HZ-20KHZ\nNoise level: ≥70dB\nOutput power: 10W\nMemory expansion: up to 32GB Micro SD card (not included)\nBattery capacity: 1800mAh\nCharging time: 2 hours\nCharging port: type-c\nWorking hours: 3-4 hours\nInput power: 5V-1A\nProduct size: about 6.49*2.36*2.51 inches\nProduct color: Black/white\nMaterial: ABS package\n\nIncludes:\n1* Bluetooth speaker 1* User manual 1*type-c cable\n",
@@ -653,17 +642,6 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/363ea8579e3b322cc85a-w72woq30tbm38i1jz9rn.webp"
       ],
       "price": 4300,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "0dad4207-f4a3-408b-bfe5-38c69465af47",
-      "name": "Cordless Electric Screwdriver Tool Kit",
-      "description": "Rechargeable cordless electric screwdriver set with multiple screwdriver bits, socket heads, flexible extension shaft, and carrying case—perfect for home repair, furniture assembly, electronics repair, and daily DIY work.\nProduct Details:\n\nProduct Type: Cordless Electric Screwdriver Kit\nPower Type: Rechargeable / cordless\nIncludes: Electric screwdriver, bits, sockets, flexible shaft, charging cable, carry case\nUse: Screw tightening/removing, small repair, furniture setup, electronics work\nPortable hard case included\nComfortable pistol-grip design\nSuitable for home, office, workshop, and DIY use\n",
-      "images": [
-        "https://cdn.businesskoro.com/legacy-cloudinary/backend/a4f845f6db724862d940-yoekdygxjrht0azt1fhh.webp"
-      ],
-      "price": 1350,
       "inStock": true,
       "variants": []
     },
@@ -716,6 +694,17 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/de153bdfb7f786ceda5e-gff71glitmjxrnxoqst5.webp"
       ],
       "price": 1150,
+      "inStock": true,
+      "variants": []
+    },
+    {
+      "id": "bbbacf87-a611-4cd6-9679-b27122548df7",
+      "name": "5 in 1 Gaming Combo Pack",
+      "description": "5-in-1 mobile gaming keyboard and mouse converter kit for smartphone gaming. Includes RGB one-hand keyboard, gaming mouse, phone connection adapter, and phone stand. Designed for smoother mobile gameplay with keyboard-mouse control, colorful RGB lighting, and comfortable wrist support\n\ncontroller -  X8",
+      "images": [
+        "https://cdn.businesskoro.com/legacy-cloudinary/backend/21e3ea2149ab96299671-vywwq6mjycil9ferpdm6.webp"
+      ],
+      "price": 1950,
       "inStock": true,
       "variants": []
     }
