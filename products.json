@@ -182,17 +182,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "41bac362-db87-4d18-ba46-a8bf46546703",
-          "color": "Red",
-          "size": null,
-          "stockQuantity": 6,
-          "inStock": true
-        },
-        {
           "id": "17e745c4-9981-4f62-ae08-a8c29d9415f7",
           "color": "Black",
           "size": null,
-          "stockQuantity": 44,
+          "stockQuantity": 37,
+          "inStock": true
+        },
+        {
+          "id": "41bac362-db87-4d18-ba46-a8bf46546703",
+          "color": "Red",
+          "size": null,
+          "stockQuantity": 5,
           "inStock": true
         }
       ]
@@ -318,17 +318,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "c6ecb383-1560-4bc8-a9f3-4bdae3ac64e4",
-          "color": "White",
+          "id": "e7306be6-5c55-4954-9677-16cd4f9ef71a",
+          "color": "Pink",
           "size": null,
-          "stockQuantity": 41,
+          "stockQuantity": 42,
           "inStock": true
         },
         {
-          "id": "e3c93eb8-1d28-4eb0-8411-e5d4379a6862",
-          "color": "Pink",
+          "id": "eb882b9d-d3a6-4af9-84ad-3bcdf91d4eaf",
+          "color": "Navy Blue",
           "size": null,
-          "stockQuantity": 43,
+          "stockQuantity": 10,
           "inStock": true
         }
       ]
@@ -678,7 +678,7 @@
           "id": "ef42a40c-d307-4036-8e26-c880b9c3fe1c",
           "color": "Silver",
           "size": null,
-          "stockQuantity": 76,
+          "stockQuantity": 75,
           "inStock": true
         }
       ]
