@@ -14,7 +14,7 @@
           "id": "9711d215-1283-4685-9d07-49f6509baf94",
           "color": null,
           "size": "XL",
-          "stockQuantity": 947,
+          "stockQuantity": 946,
           "inStock": true
         },
         {
@@ -182,17 +182,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "41bac362-db87-4d18-ba46-a8bf46546703",
+          "id": "b7b12bc9-b978-4a5d-a31f-295236f872f0",
           "color": "Red",
           "size": null,
-          "stockQuantity": 0,
-          "inStock": false
+          "stockQuantity": 22,
+          "inStock": true
         },
         {
-          "id": "17e745c4-9981-4f62-ae08-a8c29d9415f7",
+          "id": "7fe3905f-f2f6-4c2b-982a-34ac1a590deb",
           "color": "Black",
           "size": null,
-          "stockQuantity": 24,
+          "stockQuantity": 6,
           "inStock": true
         }
       ]
@@ -318,17 +318,17 @@
       "inStock": true,
       "variants": [
         {
+          "id": "eb882b9d-d3a6-4af9-84ad-3bcdf91d4eaf",
+          "color": "Navy Blue",
+          "size": null,
+          "stockQuantity": 9,
+          "inStock": true
+        },
+        {
           "id": "e7306be6-5c55-4954-9677-16cd4f9ef71a",
           "color": "Pink",
           "size": null,
           "stockQuantity": 42,
-          "inStock": true
-        },
-        {
-          "id": "eb882b9d-d3a6-4af9-84ad-3bcdf91d4eaf",
-          "color": "Navy Blue",
-          "size": null,
-          "stockQuantity": 10,
           "inStock": true
         }
       ]
