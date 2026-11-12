@@ -61,7 +61,7 @@
           "id": "a17c840e-c82d-482e-b71b-2d6f4daabe10",
           "color": "Navy Blue",
           "size": "L",
-          "stockQuantity": 348,
+          "stockQuantity": 346,
           "inStock": true
         },
         {
@@ -182,17 +182,17 @@
       "inStock": true,
       "variants": [
         {
-          "id": "17e745c4-9981-4f62-ae08-a8c29d9415f7",
-          "color": "Black",
-          "size": null,
-          "stockQuantity": 37,
-          "inStock": true
-        },
-        {
           "id": "41bac362-db87-4d18-ba46-a8bf46546703",
           "color": "Red",
           "size": null,
-          "stockQuantity": 5,
+          "stockQuantity": 0,
+          "inStock": false
+        },
+        {
+          "id": "17e745c4-9981-4f62-ae08-a8c29d9415f7",
+          "color": "Black",
+          "size": null,
+          "stockQuantity": 24,
           "inStock": true
         }
       ]
