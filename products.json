@@ -21,7 +21,7 @@
           "id": "5e701816-4967-4c8a-ac22-32e8c2314007",
           "color": null,
           "size": "L",
-          "stockQuantity": 946,
+          "stockQuantity": 945,
           "inStock": true
         }
       ]
@@ -170,32 +170,6 @@
       "price": 2950,
       "inStock": true,
       "variants": []
-    },
-    {
-      "id": "6a765b75-17bf-4536-ba64-5c111d376fa1",
-      "name": "K8 Wireless Earbuds",
-      "description": "High-Fidelity Stereo Bass\nUltra-Long Battery Life\nDigital Power Display Case\nHD Integrated Microphone\nSmart Touch Controls\nErgonomic Sport Design\nTrue Wireless (TWS) Connectivity",
-      "images": [
-        "https://cdn.businesskoro.com/products/24902504-bf97-4f16-940d-c03eed693f5c.png"
-      ],
-      "price": 400,
-      "inStock": true,
-      "variants": [
-        {
-          "id": "b7b12bc9-b978-4a5d-a31f-295236f872f0",
-          "color": "Red",
-          "size": null,
-          "stockQuantity": 22,
-          "inStock": true
-        },
-        {
-          "id": "7fe3905f-f2f6-4c2b-982a-34ac1a590deb",
-          "color": "Black",
-          "size": null,
-          "stockQuantity": 6,
-          "inStock": true
-        }
-      ]
     },
     {
       "id": "4384f9fc-d380-4928-8272-03016151fc06",
@@ -410,6 +384,13 @@
       "inStock": true,
       "variants": [
         {
+          "id": "30965634-71f6-4255-9b7a-ac811aca1e77",
+          "color": "orange",
+          "size": null,
+          "stockQuantity": 46,
+          "inStock": true
+        },
+        {
           "id": "1fed097e-75cd-48ae-8d16-99be09077069",
           "color": "Red",
           "size": null,
@@ -421,13 +402,6 @@
           "color": "Green",
           "size": null,
           "stockQuantity": 43,
-          "inStock": true
-        },
-        {
-          "id": "30965634-71f6-4255-9b7a-ac811aca1e77",
-          "color": "orange",
-          "size": null,
-          "stockQuantity": 47,
           "inStock": true
         }
       ]
@@ -628,17 +602,6 @@
         "https://cdn.businesskoro.com/legacy-cloudinary/backend/363ea8579e3b322cc85a-w72woq30tbm38i1jz9rn.webp"
       ],
       "price": 4300,
-      "inStock": true,
-      "variants": []
-    },
-    {
-      "id": "0dad4207-f4a3-408b-bfe5-38c69465af47",
-      "name": "Cordless Electric Screwdriver Tool Kit",
-      "description": "Rechargeable cordless electric screwdriver set with multiple screwdriver bits, socket heads, flexible extension shaft, and carrying case—perfect for home repair, furniture assembly, electronics repair, and daily DIY work.\nProduct Details:\n\nProduct Type: Cordless Electric Screwdriver Kit\nPower Type: Rechargeable / cordless\nIncludes: Electric screwdriver, bits, sockets, flexible shaft, charging cable, carry case\nUse: Screw tightening/removing, small repair, furniture setup, electronics work\nPortable hard case included\nComfortable pistol-grip design\nSuitable for home, office, workshop, and DIY use\n",
-      "images": [
-        "https://cdn.businesskoro.com/legacy-cloudinary/backend/a4f845f6db724862d940-yoekdygxjrht0azt1fhh.webp"
-      ],
-      "price": 1350,
       "inStock": true,
       "variants": []
     },
